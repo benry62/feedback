@@ -5,15 +5,7 @@
   <%= @comment.student_id %>
 </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @comment.date %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @comment.title %>
-</p>
 
 <p>
   <strong>Grade:</strong>
@@ -40,5 +32,5 @@
   <%= @comment.spelling %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_homework_comment_url(@homework, @comment) %> |
+<%= link_to 'Back', homework_comments_path %>

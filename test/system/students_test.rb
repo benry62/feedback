@@ -27,7 +27,7 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "Edit", match: :first
 
-    fill_in "Class", with: @student.class_id
+    fill_in "Class", with: @student.class_group_id
     fill_in "First Name", with: @student.first_name
     fill_in "Last Name", with: @student.last_name
     click_on "Update Student"

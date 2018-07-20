@@ -2,5 +2,5 @@
 
 <%= render 'form', comment: @comment %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Show', homework_comment_url(@homework, @comment) %> |
+<%= link_to 'Back', homework_comments_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_20_211342) do
+ActiveRecord::Schema.define(version: 2018_07_20_214651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,20 @@ ActiveRecord::Schema.define(version: 2018_07_20_211342) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "student_id"
-    t.date "date"
-    t.text "title"
     t.string "grade"
     t.text "www"
     t.text "area_for_development"
     t.text "dirt"
     t.text "spelling"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "homework_id"
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.integer "class_group_id"
+    t.date "date"
+    t.text "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

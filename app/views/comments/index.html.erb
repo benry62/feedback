@@ -21,16 +21,14 @@
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.student_id %></td>
-        <td><%= comment.date %></td>
-        <td><%= comment.title %></td>
         <td><%= comment.grade %></td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>
         <td><%= comment.dirt %></td>
         <td><%= comment.spelling %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', homework_comment_url(@homework, comment) %></td>
+        <td><%= link_to 'Edit', edit_homework_comment_url(@homework, comment) %></td>
+        <td><%= link_to 'Destroy', homework_comment_url(@homework, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'New Comment', new_homework_comment_path %>
