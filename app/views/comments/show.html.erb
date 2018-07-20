@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @comment.student_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @comment.date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @comment.title %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @comment.grade %>
+</p>
+
+<p>
+  <strong>Www:</strong>
+  <%= @comment.www %>
+</p>
+
+<p>
+  <strong>Area for development:</strong>
+  <%= @comment.area_for_development %>
+</p>
+
+<p>
+  <strong>Dirt:</strong>
+  <%= @comment.dirt %>
+</p>
+
+<p>
+  <strong>Spelling:</strong>
+  <%= @comment.spelling %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: class_group, local: true) do |form| %>
+  <% if class_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_group.errors.count, "error") %> prohibited this class_group from being saved:</h2>
+
+      <ul>
+      <% class_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_in_class %>
+    <%= form.number_field :number_in_class %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

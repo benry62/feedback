@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  date: 2018-07-20
+  title: MyText
+  grade: MyString
+  www: MyText
+  area_for_development: MyText
+  dirt: MyText
+  spelling: MyText
+
+two:
+  student_id: 1
+  date: 2018-07-20
+  title: MyText
+  grade: MyString
+  www: MyText
+  area_for_development: MyText
+  dirt: MyText
+  spelling: MyText
