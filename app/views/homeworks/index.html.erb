@@ -16,7 +16,7 @@
     <% @homeworks.each do |homework| %>
       <tr>
         <td><%= homework.class_group.name %></td>
-        <td><%= homework.date %></td>
+        <td><%= homework.date.strftime("%d %b %y")%></td>
         <td><%= homework.title %></td>
         <td><%= link_to 'Show', homework %></td>
         <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
