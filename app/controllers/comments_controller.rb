@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.where("homework_id = ?", @homework.id)
+
   end
 
   # GET /comments/1

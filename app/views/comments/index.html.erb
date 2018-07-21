@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Comments</h1>
-
+<h1>Feedback for <%= @homework.title %></h1>
+<h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
 <table>
   <thead>
     <tr>
       <th>Student</th>
-      <th>Date</th>
-      <th>Title</th>
       <th>Grade</th>
       <th>Www</th>
       <th>Area for development</th>
@@ -20,7 +18,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.student_id %></td>
+        <td><%= comment.student.full_name %></td>
         <td><%= comment.grade %></td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>
@@ -35,5 +33,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Comment', new_homework_comment_path %>

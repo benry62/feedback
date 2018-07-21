@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+<h1> <%= @student.full_name %> </h1>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
 
 <p>
   <strong>Class:</strong>
@@ -17,3 +10,21 @@
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+
+<h2>Homeworks</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @homeworks.each do |homework| %>
+      <tr>
+        <td> <%= homework.date.strftime("%d %b %y") %> </td>
+        <td> <%= homework.title %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
