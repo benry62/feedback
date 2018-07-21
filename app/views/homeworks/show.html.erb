@@ -20,22 +20,24 @@
 
 
 <h3>Students</h3>
-<table>
-  <thead>
-    <tr>
-      <th>&nbsp;</th>
-      <th>First name</th>
-      <th>Last name</th>
-    </tr>
-  </thead>
-  <tbody>
 
-<% @students.each do |student| %>
-  <tr>
-    <td>&nbsp;</td>
-    <td><%= student.first_name %></td>
-    <td><%= student.last_name %></td>
-  </tr>
+
+
+<%= form_with url: new_homework_comment_path(@homework), local: true do |form| %>
+
+
+
+
+  <%= form.collection_check_boxes(:student_id, @students,  :id, :full_name) do |b| %>
+     <%= b.check_box %>
+     <%= b.label %>
+  <% end %>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+
 <% end %>
-  </tbody>
-</table>

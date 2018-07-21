@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :homeworks
   resources :class_groups
-  # resources :comments
   resources :presentations
   resources :presentation_items
   resources :students

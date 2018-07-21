@@ -17,3 +17,25 @@
 
 <%= link_to 'Edit', edit_class_group_path(@class_group) %> |
 <%= link_to 'Back', class_groups_path %>
+
+
+<h3>Students</h3>
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @students.each do |student| %>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= student.first_name %></td>
+    <td><%= student.last_name %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
