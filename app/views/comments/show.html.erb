@@ -32,5 +32,12 @@
   <%= @comment.spelling %>
 </p>
 
+<h2> Presentation</h2>
+<% @comment.presentations.each do |p| %>
+  <p><%= p.presentation_item.heading %>  <%= p.presentation_item.category %> </p>
+
+<% end %>
+
+
 <%= link_to 'Edit', edit_homework_comment_url(@homework, @comment) %> |
 <%= link_to 'Back', homework_comments_path %>

@@ -69,6 +69,6 @@ class PresentationItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def presentation_item_params
-      params.require(:presentation_item).permit(:category)
+      params.require(:presentation_item).permit(:category, :heading)
     end
 end

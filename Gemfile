@@ -34,6 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+
+# Special for this app
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+# Prawn to handle the PDF generation
+gem 'prawn'
+gem 'responders'
+gem 'prawn-table'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

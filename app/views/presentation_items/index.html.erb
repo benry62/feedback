@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Heading</th>
       <th>Category</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @presentation_items.each do |presentation_item| %>
       <tr>
+        <td><%= presentation_item.heading %></td>
         <td><%= presentation_item.category %></td>
         <td><%= link_to 'Show', presentation_item %></td>
         <td><%= link_to 'Edit', edit_presentation_item_path(presentation_item) %></td>
