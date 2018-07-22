@@ -22,22 +22,4 @@
 <h3>Students</h3>
 
 
-
-<%= form_with url: new_homework_comment_path(@homework), local: true do |form| %>
-
-
-
-
-  <%= form.collection_check_boxes(:student_id, @students,  :id, :full_name) do |b| %>
-     <%= b.check_box %>
-     <%= b.label %>
-  <% end %>
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-
-<% end %>
+<%= render 'comments/form', comment: @comment %>

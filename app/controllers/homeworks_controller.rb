@@ -1,6 +1,7 @@
 class HomeworksController < ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
 
+
   # GET /homeworks
   # GET /homeworks.json
   def index
@@ -11,6 +12,7 @@ class HomeworksController < ApplicationController
   # GET /homeworks/1.json
   def show
     @students = @homework.class_group.students
+    @comment = Comment.new
   end
 
   # GET /homeworks/new
@@ -64,6 +66,8 @@ class HomeworksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+
     def set_homework
       @homework = Homework.find(params[:id])
     end

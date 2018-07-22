@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= form.label :student_id %>
-    <%= form.number_field :student_id %>
+    <%= form.collection_select(:student_id, @homework.class_group.students, :id, :full_name, prompt: true ) %></p>
+
+
+
+
   </div>
 
 

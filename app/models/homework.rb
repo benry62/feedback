@@ -6,4 +6,6 @@ class Homework < ApplicationRecord
   validates :title, presence: true
   validates :date, presence: true
 
+  accepts_nested_attributes_for :comments, :allow_destroy => true
+
 end

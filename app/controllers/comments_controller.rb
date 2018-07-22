@@ -28,6 +28,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.homework_id = @homework.id
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to homework_comments_url, notice: 'Comment was successfully created.' }
