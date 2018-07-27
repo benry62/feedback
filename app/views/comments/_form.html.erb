@@ -1,10 +1,10 @@
 <%= form_with(model: @comment, url: (@comment.new_record? ? [@homework, @comment]: [@homework, @comment])) do |form| %>
-  <% if comment.errors.any? %>
+  <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
       <ul>
-      <% comment.errors.full_messages.each do |message| %>
+      <% @comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -16,37 +16,36 @@
     <%= form.collection_select(:student_id, @homework.class_group.students, :id, :full_name, prompt: true ) %></p>
   </div>
 
-  <div class="field">
-    <%= form.label :grade %>
-    <%= form.text_field :grade %>
+  <div class="field_in_line">
+    <%= form.label :www, "Comments" %>
+    <%= form.text_area :www, cols: 60, rows: 7%>
   </div>
 
-  <div class="field">
-    <%= form.label :www, "What went well" %>
-    <%= form.text_area :www %>
-  </div>
-
-  <div class="field">
+  <div class="field_in_line">
     <%= form.label :area_for_development %>
-    <%= form.text_area :area_for_development %>
+    <%= form.text_area :area_for_development, cols: 28, rows: 7 %>
   </div>
 
-  <div class="field">
+  <div class="field_in_line">
     <%= form.label :dirt, "DIRT" %>
-    <%= form.text_area :dirt %>
+    <%= form.text_area :dirt, cols: 26, rows: 7 %>
   </div>
 
-  <div class="field">
+  <div class="field_in_line">
     <%= form.label :spelling %>
-    <%= form.text_area :spelling %>
+    <%= form.text_area :spelling, cols: 26, rows: 7 %>
   </div>
 
+<div class="checkbox_field">
 <%= form.fields_for :presentations do |pres_form| %>
   <%= form.collection_check_boxes(:presentation_item_ids, PresentationItem.all, :id, :full_item) do |cb| %>
+    <div style="clear:both;">
      <%= cb.check_box %>
-     <%= cb.label %>
+     <%= cb.label(:style => "float:left;") %>
+   </div>
   <% end %>
 <% end %>
+</div>
 
   <div class="actions">
     <%= form.submit %>

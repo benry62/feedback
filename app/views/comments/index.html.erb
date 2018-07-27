@@ -31,5 +31,8 @@
 
 <br>
 
-<%= link_to 'New Comment', new_homework_comment_path %> |
+<%= link_to 'New Comment', new_homework_comment_path, :id => "new_comment", remote: true%> |
 <%= link_to "Printable Form (PDF)", homework_comments_path(@homework, format: 'pdf') %>
+
+<div id="form_holder">
+</div>

@@ -10,7 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
+//= require jquery
+//= require jquery-ui/effects/effect-blind
+//= require jquery-ui
+//= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree
+
+
+$(document).on('turbolinks:load', function() {
+
+
+
+//  $( "#new_comment" ).click(function() {
+//    alert("woo")
+//    return false;
+//  });
+
+
+
+});
