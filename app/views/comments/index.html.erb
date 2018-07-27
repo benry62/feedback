@@ -6,12 +6,11 @@
   <thead>
     <tr>
       <th>Student</th>
-      <th>Grade</th>
       <th>Www</th>
       <th>Area for development</th>
       <th>Dirt</th>
       <th>Spelling</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -19,12 +18,10 @@
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.student.full_name %></td>
-        <td><%= comment.grade %></td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>
         <td><%= comment.dirt %></td>
         <td><%= comment.spelling %></td>
-        <td><%= link_to 'Show', homework_comment_url(@homework, comment) %></td>
         <td><%= link_to 'Edit', edit_homework_comment_url(@homework, comment) %></td>
         <td><%= link_to 'Destroy', homework_comment_url(@homework, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

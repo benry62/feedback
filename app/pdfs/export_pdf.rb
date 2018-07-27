@@ -21,6 +21,21 @@ class ExportPdf < Prawn::Document
     end
   end
 
+  def read_box(indent)
+    move_up 20
+    indent (indent) do
+      font("zapfdingbats") do
+        text "o", size: 16
+      end
+      move_up (14)
+      indent(15) do
+        text "Completed"
+      end
+    end
+  end
+
+
+
   def form_header(comment)
     grid([0, 0], [1, 5]).bounding_box do
       stroke_bounds
@@ -59,6 +74,7 @@ class ExportPdf < Prawn::Document
         end
       }
     end
+    read_box(445)
   end #www
 
   def feedback(comment)
@@ -115,12 +131,22 @@ class ExportPdf < Prawn::Document
     id_array
   end
 
+  def write_categories(id_array, ids, categories, i)
+    indent (20) do
+      font("zapfdingbats") do
+        text checked(id_array, ids[i])
+      end
+      move_up 11
+      indent (12) do
+        text categories[i]
+      end
+    end # intent
+  end
 
 
   def presentation(comment)
     grid([11, 0], [17, 1]).bounding_box do
       stroke_bounds
-      cat = ""
       ids, headings, categories = build_pres_items_hash
       id_array = pres_items_ids (comment)
 
@@ -147,33 +173,17 @@ class ExportPdf < Prawn::Document
 
             #Then move along to the next item.
             if headings[i] == headings[i-1]
-              indent (20) do
-                font("zapfdingbats") do
-                  text checked(id_array, ids[i])
-                end
-                move_up 11
-                indent (12) do
-                  text categories[i]
-                end
-#                text checked(id_array, ids[i]) + categories[i]
-              end # intent
+              write_categories(id_array, ids, categories, i)
               i += 1
             else
               text headings[i], size: 14, :style => :bold
-              indent (20) do
-                font("zapfdingbats") do
-                  text checked(id_array, ids[i])
-                end
-                move_up 11
-                indent (12) do
-                  text categories[i]
-                end
-              end #do
+              write_categories(id_array, ids, categories, i)
             end #if
           end #for
         end # indent
       } #pad
     end #grid
+    read_box(93)
   end #presentation
 
   def dirt(comment)
@@ -186,10 +196,7 @@ class ExportPdf < Prawn::Document
         end
       }
     end
-
-
-
-
+    read_box(445)
   end
 
 
@@ -204,7 +211,7 @@ class ExportPdf < Prawn::Document
         end
       }
     end
-
+    read_box(445)
   end
 
 
