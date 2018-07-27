@@ -6,11 +6,21 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.where("homework_id = ?", @homework.id)
-  end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ExportPdf.new(@homework, PresentationItem.all)
+        send_data pdf.render,
+          filename: "export.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+    end  end
 
   # GET /comments/1
   # GET /comments/1.json
   def show
+
   end
 
   # GET /comments/new
