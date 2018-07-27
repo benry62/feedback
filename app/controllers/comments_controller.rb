@@ -43,7 +43,6 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    @comment.presentations.build(comment_params[:presentation_item_id])
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to homework_comments_url(@homework, @comment), notice: 'Comment was successfully updated.' }
@@ -87,7 +86,8 @@ class CommentsController < ApplicationController
         :dirt,
         :spelling,
         :homework_id,
-        presentations_attributes: [:id, :presentation_item_id=>[]]
+        presentation_item_ids: []
         )
     end
+
 end

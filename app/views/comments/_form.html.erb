@@ -42,7 +42,7 @@
   </div>
 
 <%= form.fields_for :presentations do |pres_form| %>
-  <%= pres_form.collection_check_boxes(:presentation_item_id, PresentationItem.all, :id, :full_item) do |cb| %>
+  <%= form.collection_check_boxes(:presentation_item_ids, PresentationItem.all, :id, :full_item) do |cb| %>
      <%= cb.check_box %>
      <%= cb.label %>
   <% end %>
