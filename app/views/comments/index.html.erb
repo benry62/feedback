@@ -17,7 +17,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.student.full_name %></td>
+        <td><%= link_to comment.student.full_name, comment.student %></td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>
         <td><%= comment.dirt %></td>
@@ -31,7 +31,7 @@
 
 <br>
 
-<%= link_to 'New Comment', new_homework_comment_path, :id => "new_comment", remote: true%> |
+<%= link_to 'New Comment', new_homework_comment_path, :id => "new_comment", remote: true %> |
 <%= link_to "Printable Form (PDF)", homework_comments_path(@homework, format: 'pdf') %>
 
 <div id="form_holder">

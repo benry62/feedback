@@ -4,13 +4,25 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.order('class_group_id ASC', :last_name)
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
     @homeworks = @student.class_group.homeworks
+    @comments = Comment.where("student_id=?", @student.id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = StudentReportPdf.new(@comments, PresentationItem.all)
+        send_data pdf.render,
+          filename: "export.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+    end
+
   end
 
   # GET /students/new

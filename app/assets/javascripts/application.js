@@ -15,17 +15,14 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree
+
 
 
 $(document).on('turbolinks:load', function() {
 
 
 
-//  $( "#new_comment" ).click(function() {
-//    alert("woo")
-//    return false;
-//  });
+
 
 
 

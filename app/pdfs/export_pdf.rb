@@ -17,6 +17,7 @@ class ExportPdf < Prawn::Document
       presentation(comment)
       dirt(comment)
       spelling (comment)
+      next_steps
       start_new_page
     end
   end
@@ -79,28 +80,16 @@ class ExportPdf < Prawn::Document
 
   def feedback(comment)
 
-    grid([6, 0], [10, 5]).bounding_box do
-      stroke_bounds
-    end
-
-    grid([6, 0], [10, 2]).bounding_box do
+    grid([6, 0], [9, 5]).bounding_box do
       stroke_bounds
       pad(12){
         indent (10) do
           text "Feedback", size: 16, :style => :bold
-          text "Area for development", size: 14, :style => :bold
           text comment.area_for_development, size: 14
         end
       }
     end
-
-    grid([6, 3], [10, 5]).bounding_box do
-      pad(12){
-        indent (10) do
-          text "\nSteps I will take", size: 14, :style => :bold
-        end
-      }
-    end
+    read_box(445)
   end # feedback
 
   def build_pres_items_hash
@@ -145,12 +134,12 @@ class ExportPdf < Prawn::Document
 
 
   def presentation(comment)
-    grid([11, 0], [17, 1]).bounding_box do
+    grid([10, 0], [15, 1]).bounding_box do
       stroke_bounds
       ids, headings, categories = build_pres_items_hash
       id_array = pres_items_ids (comment)
 
-      pad(12){
+      pad(10){
         indent (10) do
           text "Presentation", size: 16, :style => :bold
           text headings[0], size: 14, :style => :bold
@@ -183,11 +172,11 @@ class ExportPdf < Prawn::Document
         end # indent
       } #pad
     end #grid
-    read_box(93)
+    #read_box(93)
   end #presentation
 
   def dirt(comment)
-    grid([11, 2], [17, 5]).bounding_box do
+    grid([10, 2], [12, 5]).bounding_box do
       stroke_bounds
       pad(12){
         indent (10) do
@@ -202,7 +191,7 @@ class ExportPdf < Prawn::Document
 
 
   def spelling(comment)
-    grid([18, 0], [20, 5]).bounding_box do
+    grid([13, 2], [15, 5]).bounding_box do
       stroke_bounds
       pad(12){
         indent (10) do
@@ -214,7 +203,17 @@ class ExportPdf < Prawn::Document
     read_box(445)
   end
 
-
+  def next_steps
+    grid([16, 0], [20, 5]).bounding_box do
+      stroke_bounds
+      pad(12){
+        indent (10) do
+          text "Steps I will take", size: 16, :style => :bold
+        end
+      }
+    end
+    read_box(445)
+  end
 
 
 

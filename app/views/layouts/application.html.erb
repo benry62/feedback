@@ -4,12 +4,24 @@
     <title>Feedback</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <div class="navbar">
+      <%= link_to "Homework", homeworks_url %>
+      <%= link_to "Students", students_url %>
+      <%= link_to "Classes", class_groups_url %>
+      <%= link_to "Presentation Item", presentation_items_url %>
+
+
+    </div>
+    <div class="main">
     <%= yield %>
+    </div>
   </body>
 </html>

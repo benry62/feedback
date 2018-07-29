@@ -17,14 +17,26 @@
     <tr>
       <th>Date</th>
       <th>Title</th>
+      <th>Comments</th>
+      <th>Feedback</th>
+      <th>DIRT</th>
+
+
     </tr>
   </thead>
   <tbody>
-    <% @homeworks.each do |homework| %>
+    <% @comments.each do |comment| %>
       <tr>
-        <td> <%= homework.date.strftime("%d %b %y") %> </td>
-        <td> <%= homework.title %> </td>
+        <td> <%= comment.homework.date.strftime("%d %b %y") %> </td>
+        <td> <%= comment.homework.title %> </td>
+        <td> <%= comment.www %> </td>
+        <td> <%= comment.area_for_development %> </td>
+        <td> <%= comment.dirt %> </td>
+
+
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "Printable Form (PDF)", student_path(format: 'pdf') %>

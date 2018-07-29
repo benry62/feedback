@@ -1,4 +1,4 @@
-<%= form_with(model: @comment, url: (@comment.new_record? ? [@homework, @comment]: [@homework, @comment])) do |form| %>
+<%= form_with(model: @comment, url: (@comment.new_record? ? [@homework, @comment]: [@homework, @comment]), remote: true) do |form| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -23,17 +23,17 @@
 
   <div class="field_in_line">
     <%= form.label :area_for_development %>
-    <%= form.text_area :area_for_development, cols: 28, rows: 7 %>
+    <%= form.text_area :area_for_development, cols: 60, rows: 7 %>
   </div>
 
   <div class="field_in_line">
     <%= form.label :dirt, "DIRT" %>
-    <%= form.text_area :dirt, cols: 26, rows: 7 %>
+    <%= form.text_area :dirt, cols: 12, rows: 7 %>
   </div>
 
   <div class="field_in_line">
     <%= form.label :spelling %>
-    <%= form.text_area :spelling, cols: 26, rows: 7 %>
+    <%= form.text_area :spelling, cols: 12, rows: 7 %>
   </div>
 
 <div class="checkbox_field">

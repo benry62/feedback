@@ -7,9 +7,7 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.where("homework_id = ?", @homework.id)
     respond_to do |format|
-      format.html do
-
-      end
+      format.html
       format.pdf do
         pdf = ExportPdf.new(@homework, PresentationItem.all)
         send_data pdf.render,
@@ -17,7 +15,8 @@ class CommentsController < ApplicationController
           type: 'application/pdf',
           disposition: 'inline'
       end
-    end  end
+    end
+  end
 
   # GET /comments/1
   # GET /comments/1.json
@@ -58,6 +57,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to homework_comments_url(), notice: 'Comment was successfully updated.' }
+        format.js
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }

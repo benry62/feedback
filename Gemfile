@@ -40,8 +40,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Prawn to handle the PDF generation
 gem 'prawn'
-gem 'responders'
 gem 'prawn-table'
+
+gem 'responders'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
