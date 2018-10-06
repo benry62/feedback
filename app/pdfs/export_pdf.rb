@@ -8,13 +8,16 @@ class ExportPdf < Prawn::Document
 
 
     @homework = homework
+    is_worksheet = @homework.is_worksheet
     @comments = @homework.comments
     @presentation_items = presentation_items
     @comments.each do |comment|
       form_header(comment)
       www (comment)
       feedback (comment)
-      presentation(comment)
+      unless @homework.is_worksheet
+        presentation(comment)
+      end
       dirt(comment)
       spelling (comment)
       next_steps
@@ -208,7 +211,7 @@ class ExportPdf < Prawn::Document
       stroke_bounds
       pad(12){
         indent (10) do
-          text "Steps I will take", size: 16, :style => :bold
+          text "My comments", size: 16, :style => :bold
         end
       }
     end
