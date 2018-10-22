@@ -5,7 +5,9 @@ class HomeworksController < ApplicationController
   # GET /homeworks
   # GET /homeworks.json
   def index
-    @homeworks = Homework.all
+    @homeworks = Homework.order('created_at ASC')
+
+    #@homeworks = Homework.all.group_by(&:class_group).sort_by{|class_group, created_at| class_group.name}
   end
 
   # GET /homeworks/1
@@ -74,6 +76,6 @@ class HomeworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def homework_params
-      params.require(:homework).permit(:class_group_id, :date, :title, :is_worksheet)
+      params.require(:homework).permit(:class_group_id, :date, :title, :is_worksheet, :misconception)
     end
 end
