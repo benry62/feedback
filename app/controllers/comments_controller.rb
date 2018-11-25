@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
       format.pdf do
         pdf = ExportPdf.new(@homework, PresentationItem.all)
         send_data pdf.render,
-          filename: "export.pdf",
+          #filename: "Homework #{@homework.class_group.name}",
+          filename: @homework.class_group.name + "_Homework_" + @homework.date.strftime("%d_%b_%y") + ".pdf",
           type: 'application/pdf',
           disposition: 'inline'
       end

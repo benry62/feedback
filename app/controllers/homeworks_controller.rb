@@ -5,9 +5,11 @@ class HomeworksController < ApplicationController
   # GET /homeworks
   # GET /homeworks.json
   def index
-    @homeworks = Homework.order('created_at ASC')
+  #  @homeworks = Homework.order('created_at ASC')
+    @homeworks = Homework.order(:class_group_id, 'created_at ASC')
 
-    #@homeworks = Homework.all.group_by(&:class_group).sort_by{|class_group, created_at| class_group.name}
+
+
   end
 
   # GET /homeworks/1
