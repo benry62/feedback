@@ -15,7 +15,7 @@
 
   <tbody>
     <% @homeworks.each do |homework| %>
-      <tr>
+      <tr class="c<%= homework.class_group.name %>">
         <td><%= homework.class_group.name %></td>
         <td><%= homework.date.strftime("%d %b %y")%></td>
         <td><%= homework.title %></td>
