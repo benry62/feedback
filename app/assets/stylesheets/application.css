@@ -72,3 +72,7 @@
    background-color: rgb(77, 199, 66);
    color: white;
  }
+
+.not_current{
+  background-color: #D3D3D3;
+}

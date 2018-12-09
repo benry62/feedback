@@ -28,6 +28,11 @@
     <%= form.collection_select(:class_group_id, ClassGroup.all, :id, :name, prompt: true ) %></p>
   </div>
 
+  <div class="field">
+    <%= form.label :is_current %>
+    <%= form.check_box :is_current %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
