@@ -81,10 +81,12 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+
     end
 
     def get_homework
       @homework = Homework.find(params[:homework_id])
+      @students = @homework.class_group.students.where("is_current").sort_by{ |m| m.last_name.downcase }
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

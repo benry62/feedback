@@ -10,7 +10,7 @@ class ClassGroupsController < ApplicationController
   # GET /class_groups/1
   # GET /class_groups/1.json
   def show
-    @students = Student.where("class_group_id = ?", @class_group.id).order(:last_name)
+    @students = Student.where("is_current AND class_group_id = ?", @class_group.id).order(:last_name)
   end
 
   # GET /class_groups/new
