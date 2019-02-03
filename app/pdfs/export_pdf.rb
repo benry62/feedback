@@ -5,6 +5,15 @@ class ExportPdf < Prawn::Document
     define_grid(:columns => 6, :rows => 21  , :gutter => 5)
     @logo = "#{Rails.root}/app/assets/images/swan_logo.png"
     font_families.update("zapfdingbats" => {:normal => "#{Rails.root}/app/assets/fonts/zapfdingbats.ttf"} )
+    create_stamp("resubmit") do
+      fill_color "D3D3D3"
+      stroke_color "000000"
+      rotate(45, :origin => [-5, -5]) do
+       font("Times-Roman") do
+       draw_text "Resubmit", :at => [150, 10] , size: 150, :mode => :stroke
+     end
+     end
+    end
 
 
     @homework = homework
@@ -12,12 +21,16 @@ class ExportPdf < Prawn::Document
     @comments = @homework.comments
     @presentation_items = presentation_items
     @comments.each do |comment|
+      if comment.resubmit
+        stamp "resubmit"
+      end
       form_header(comment)
       www (comment)
       feedback (comment)
       unless @homework.is_worksheet
         presentation(comment)
       end
+
       dirt(comment)
       spelling (comment)
       next_steps
@@ -40,6 +53,10 @@ class ExportPdf < Prawn::Document
 
 
 
+
+
+
+
   def form_header(comment)
     grid([0, 0], [1, 5]).bounding_box do
       stroke_bounds
@@ -48,7 +65,7 @@ class ExportPdf < Prawn::Document
     grid([0, 0], [1, 2]).bounding_box do
       pad(12) {
         indent(10) do
-          text comment.student.first_name + " " + comment.student.last_name, size: 14
+          text comment.student.first_name + " " + comment.student.last_name, size: 14, :style => :bold
           text "Topic: " + @homework.title, size: 14
         end
       }

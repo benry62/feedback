@@ -16,6 +16,7 @@
     <%= form.collection_select(:student_id, @students, :id, :full_name, prompt: true ) %>
   </div>
 
+
   <div class="field_in_line">
     <%= form.label :www, "Comments" %>
     <%= form.text_area :www, cols: 60, rows: 7%>
@@ -46,6 +47,13 @@
   <% end %>
 <% end %>
 </div>
+
+<div class="field">
+  <%= form.label :resubmit %>
+  <%= form.check_box :resubmit %>
+</div>
+
+
 
   <div class="actions">
     <%= form.submit 'Submit', :id => 'form_submit' %>
