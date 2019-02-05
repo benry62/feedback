@@ -16,7 +16,7 @@
 
   <tbody>
     <% @comments.each do |comment| %>
-      <tr <%= comment.resubmit ? ' class=resubmit' : '' %>>
+      <tr class="<%= comment.addclass %>">
         <td><%= link_to comment.student.full_name, comment.student %></td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>

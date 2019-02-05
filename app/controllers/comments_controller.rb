@@ -102,6 +102,7 @@ class CommentsController < ApplicationController
         :spelling,
         :homework_id,
         :resubmit,
+        :merit,
         presentation_item_ids: []
         )
     end

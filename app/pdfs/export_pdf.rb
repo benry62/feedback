@@ -9,11 +9,22 @@ class ExportPdf < Prawn::Document
       fill_color "D3D3D3"
       stroke_color "000000"
       rotate(45, :origin => [-5, -5]) do
-       font("Times-Roman") do
-       draw_text "Resubmit", :at => [150, 10] , size: 150, :mode => :stroke
-     end
-     end
+        font("Times-Roman") do
+          draw_text "Resubmit", :at => [150, 10] , size: 150, :mode => :stroke
+        end
+      end
     end
+    create_stamp("merit") do
+      fill_color "D3D3D3"
+      stroke_color "000000"
+      rotate(45, :origin => [-5, -5]) do
+        font("Times-Roman") do
+          draw_text "Merit", :at => [220, 50] , size: 150, :mode => :stroke
+        end
+      end
+    end
+
+
 
 
     @homework = homework
@@ -21,6 +32,9 @@ class ExportPdf < Prawn::Document
     @comments = @homework.comments
     @presentation_items = presentation_items
     @comments.each do |comment|
+      if comment.merit
+        stamp "merit"
+      end
       if comment.resubmit
         stamp "resubmit"
       end
