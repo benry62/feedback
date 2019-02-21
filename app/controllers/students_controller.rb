@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @homeworks = @student.class_group.homeworks
-    @comments = Comment.where("student_id=?", @student.id)
+    @comments = Comment.where("student_id=?", @student.id).order('created_at ASC')
     respond_to do |format|
       format.html
       format.pdf do

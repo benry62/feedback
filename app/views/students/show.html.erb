@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <% @comments.each do |comment| %>
-      <tr>
+    <tr class="<%= comment.addclass %>">
         <td> <%= comment.homework.date.strftime("%d %b %y") %> </td>
         <td> <%= comment.homework.title %> </td>
         <td> <%= comment.www %> </td>
