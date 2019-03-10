@@ -242,7 +242,7 @@ class ExportPdf < Prawn::Document
       stroke_bounds
       pad(12){
         indent (10) do
-          text "My comments", size: 16, :style => :bold
+          text "What I will do to improve", size: 16, :style => :bold
         end
       }
     end
