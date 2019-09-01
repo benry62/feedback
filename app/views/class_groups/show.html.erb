@@ -1,3 +1,5 @@
+<div id="class_group_page<%if @class_group.is_archive%>_archive<% end%>">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -18,9 +20,9 @@
 <p>
   <strong>Status:</strong>
   <% if @class_group.is_archive == true  %>
-    ARCHIVED
+    <span style ="color:red">ARCHIVED</span>
   <% else %>
-    CURRENT
+    <span style ="color:green">CURRENT</span>
   <% end %>
 </p>
 
@@ -54,3 +56,4 @@
 <% end %>
   </tbody>
 </table>
+</div>
