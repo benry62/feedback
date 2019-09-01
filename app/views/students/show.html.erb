@@ -12,6 +12,8 @@
 <%= link_to 'Back', students_path %>
 
 <h2>Homeworks</h2>
+<p><button>Show/hide archive</button></p>
+
 <table>
   <thead>
     <tr>
@@ -26,7 +28,7 @@
   </thead>
   <tbody>
     <% @comments.each do |comment| %>
-    <tr class="<%= comment.addclass %>">
+    <tr class="<%= comment.addclass %><% if comment.homework.is_archive ==TRUE %> not_current<% end %>">
         <td> <%= comment.homework.date.strftime("%d %b %y") %> </td>
         <td> <%= comment.homework.title %> </td>
         <td> <%= comment.www %> </td>
@@ -38,5 +40,6 @@
     <% end %>
   </tbody>
 </table>
+<p><button>Show/hide archive</button></p>
 
 <%= link_to "Printable Form (PDF)", student_path(format: 'pdf') %>

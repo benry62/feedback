@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :class_group_id %>
-    <%= form.collection_select(:class_group_id, ClassGroup.order(:year, :name), :id, :name, prompt: true ) %>
+    <%= form.collection_select(:class_group_id, ClassGroup.order(:year, :name).where('is_archive!= TRUE'), :id, :name, prompt: true ) %>
   </div>
 
   <div class="field">
