@@ -15,6 +15,7 @@
 
   <tbody>
     <% @homeworks.each do |homework| %>
+    <% unless homework.class_group.is_archive == true %>
       <tr class="c<%= homework.class_group.name %>">
         <td><%= homework.class_group.name %></td>
         <td><%= homework.date.strftime("%d %b %y")%></td>
@@ -25,6 +26,7 @@
         <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
         <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

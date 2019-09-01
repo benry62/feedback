@@ -6,9 +6,24 @@
 </p>
 
 <p>
+  <strong>Academic year:</strong>
+  <%= @class_group.academic_year %>
+</p>
+
+<p>
   <strong>Year:</strong>
   <%= @class_group.year %>
 </p>
+
+<p>
+  <strong>Status:</strong>
+  <% if @class_group.is_archive == true  %>
+    ARCHIVED
+  <% else %>
+    CURRENT
+  <% end %>
+</p>
+
 
 <p>
   <strong>Number in class:</strong>

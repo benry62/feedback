@@ -19,8 +19,11 @@
 
 
 $(document).on('turbolinks:load', function() {
+  $( ".not_current" ).hide();
 
-
+  $( "button" ).click(function() {
+    $( ".not_current" ).toggle();
+  });
 
 
 });

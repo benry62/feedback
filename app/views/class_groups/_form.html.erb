@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :academic_year %>
+    <%= form.text_area :academic_year %>
+  </div>
+
+
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_area :name %>
   </div>
@@ -25,6 +32,15 @@
     <%= form.label :number_in_class %>
     <%= form.number_field :number_in_class %>
   </div>
+
+
+
+  <div class="field">
+    <%= form.label :is_archive %>
+    <%= form.check_box :is_archive %>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
