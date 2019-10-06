@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_01_140824) do
+ActiveRecord::Schema.define(version: 2019_10_06_104154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_140824) do
     t.integer "homework_id"
     t.boolean "resubmit", default: false
     t.boolean "merit", default: false
+    t.integer "result"
   end
 
   create_table "homeworks", force: :cascade do |t|
@@ -46,8 +47,8 @@ ActiveRecord::Schema.define(version: 2019_09_01_140824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_worksheet"
-    t.text "misconception"
     t.boolean "is_archive", default: false
+    t.integer "score"
   end
 
   create_table "presentation_items", force: :cascade do |t|

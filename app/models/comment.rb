@@ -4,12 +4,25 @@ class Comment < ApplicationRecord
 
   has_many :presentations, dependent: :destroy
   has_many :presentation_items, through: :presentations
+  validates :result, numericality: { only_integer: true }
+
 
   def addclass
     if resubmit
       css_class = 'resubmit'
     elsif merit
       css_class = "merit"
+    else
+      css_class = ''
+    end
+    css_class
+  end
+
+  def calculate_class (total_score)
+    if result.to_f/total_score.to_f > 0.85
+      css_class = "merit"
+    elsif result.to_f/total_score.to_f < 0.49
+      css_class = "resubmit"
     else
       css_class = ''
     end

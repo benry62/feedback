@@ -95,6 +95,7 @@ class CommentsController < ApplicationController
         :date,
         :title,
         :grade,
+        :result,
         :www,
         :area_for_development,
         :dirt,

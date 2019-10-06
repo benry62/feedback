@@ -78,6 +78,6 @@ class HomeworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def homework_params
-      params.require(:homework).permit(:class_group_id, :date, :title, :is_worksheet, :misconception, :is_archive)
+      params.require(:homework).permit(:class_group_id, :date, :title, :is_worksheet, :score, :is_archive)
     end
 end

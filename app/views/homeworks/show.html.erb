@@ -15,5 +15,10 @@
   <%= @homework.title %>
 </p>
 
+<p>
+  <strong>Score:</strong>
+  <%= @homework.score %>
+</p>
+
 <%= link_to 'Edit', edit_homework_path(@homework) %> |
 <%= link_to 'Back', homeworks_path %>

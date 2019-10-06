@@ -5,6 +5,7 @@ class Homework < ApplicationRecord
 
   validates :title, presence: true
   validates :date, presence: true
+  validates :score, numericality: { only_integer: true }
 
 
 
