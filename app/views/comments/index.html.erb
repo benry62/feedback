@@ -2,9 +2,12 @@
 
 <h1>Feedback for <%= @homework.title %></h1>
 <h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
+<p>Number students: <%= @homework.class_group.students.size  =%></p>
+<p>Maximum score: <%= @homework.score  =%></p>
 <table>
   <thead>
     <tr>
+      <th> </th>
       <th>Student</th>
       <th>Score</th>
       <th>www</th>
@@ -16,10 +19,16 @@
   </thead>
 
   <tbody>
+    <% count = 1 %>
     <% @comments.each do |comment| %>
       <tr class="<%= comment.calculate_class(comment.homework.score) %>">
+        <td> <%= count %> </td>
         <td><%= link_to comment.student.full_name, comment.student %></td>
-        <td><%= comment.result %></td>
+        <td><%= comment.result %>
+          <% if comment.merit %>
+            <%= image_tag("flags-icon-png-10291.png", size: "24") %>
+            <% end %>
+        </td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>
         <td><%= comment.dirt %></td>
@@ -27,6 +36,7 @@
         <td><%= link_to 'Edit', edit_homework_comment_url(@homework, comment) %></td>
         <td><%= link_to 'Destroy', homework_comment_url(@homework, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% count +=1 %>
     <% end %>
   </tbody>
 </table>

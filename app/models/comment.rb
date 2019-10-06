@@ -20,7 +20,6 @@ class Comment < ApplicationRecord
 
   def calculate_class (total_score)
     if result.to_f/total_score.to_f > 0.85
-      self.merit = TRUE
       css_class = "merit"
     elsif result.to_f/total_score.to_f < 0.49
       self.resubmit = TRUE
@@ -31,6 +30,7 @@ class Comment < ApplicationRecord
     self.save
     css_class
   end
+
 
 
 end
