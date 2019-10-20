@@ -4,7 +4,7 @@
 <h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
 <p>Number students: <%= @homework.class_group.students.size  =%></p>
 <p>Maximum score: <%= @homework.score  =%></p>
-<table>
+<table id="myTable" class="tablesorter">
   <thead>
     <tr>
       <th> </th>

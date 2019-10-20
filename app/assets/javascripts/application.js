@@ -18,8 +18,15 @@
 
 
 
+
 $(document).on('turbolinks:load', function() {
   $( ".not_current" ).hide();
+
+  $(function() {
+    $("#myTable").tablesorter();
+  });
+
+
 
   $( "button" ).click(function() {
     $( ".not_current" ).toggle();
