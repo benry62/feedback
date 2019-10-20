@@ -43,6 +43,9 @@
       <th>&nbsp;</th>
       <th>First name</th>
       <th>Last name</th>
+      <% @homeworks.each do |homework| %>
+        <th><%= homework.title[0..3]%></th>
+        <% end %>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +55,9 @@
     <td>&nbsp;</td>
     <td><%= student.first_name %></td>
     <td><%= student.last_name %></td>
+    <% student.comments.each do |comment| %>
+      <td> <%= comment.result %> </td>
+    <% end %>
   </tr>
 <% end %>
   </tbody>
