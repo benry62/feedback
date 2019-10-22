@@ -44,12 +44,12 @@
       <th>First name</th>
       <th>Last name</th>
       <% @homeworks.each do |homework| %>
-        <th><%= homework.title[0..3]%></th>
+        <th><p><%= homework.title[0..3]%></p><p><%= homework.score %></th>
         <% end %>
     </tr>
   </thead>
   <tbody>
-
+ <% #really what I want is to loop through all the homeworks, build an array that has the homework title, the homework id and all the scores in it with the scores listed against the student id. that way I can just pull out the title above, and as I loop through the students use the student id to pull out the relevant score for that homework %>
 <% @students.each do |student| %>
   <tr>
     <td>&nbsp;</td>
