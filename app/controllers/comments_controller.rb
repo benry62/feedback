@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.where("homework_id = ?", @homework.id).order('created_at ASC')
+  @comments =   Comment.joins(:student).merge(Student.order(last_name: :asc)).where("homework_id = ?", @homework.id)
     respond_to do |format|
       format.html
       format.pdf do

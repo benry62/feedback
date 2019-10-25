@@ -7,7 +7,6 @@
 <table id="myTable" class="tablesorter">
   <thead>
     <tr>
-      <th> </th>
       <th>Student</th>
       <th>Score</th>
       <th>www</th>
@@ -19,10 +18,8 @@
   </thead>
 
   <tbody>
-    <% count = 1 %>
     <% @comments.each do |comment| %>
       <tr class="<%= comment.calculate_class(comment.homework.score) %>">
-        <td> <%= count %> </td>
         <td><%= link_to comment.student.full_name, comment.student %></td>
         <td><%= comment.result %>
           <% if comment.merit %>
@@ -36,7 +33,6 @@
         <td><%= link_to 'Edit', edit_homework_comment_url(@homework, comment) %></td>
         <td><%= link_to 'Destroy', homework_comment_url(@homework, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <% count +=1 %>
     <% end %>
   </tbody>
 </table>

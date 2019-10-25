@@ -35,6 +35,7 @@ class HomeworksController < ApplicationController
 
     respond_to do |format|
       if @homework.save
+        @homework.build_comments
         format.html { redirect_to @homework, notice: 'Homework was successfully created.' }
         format.json { render :show, status: :created, location: @homework }
       else
