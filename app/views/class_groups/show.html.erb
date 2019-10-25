@@ -60,18 +60,19 @@
     <td><%= link_to student.last_name, edit_student_url(student) %></td>
     <% @homeworks.each do |homework| %>
       <% results = @class_group.get_scores(homework) %>
-      <% result = results[student.id][:result] %>
-        <td class="<%= @class_group.set_colour(homework, result) %>"> <%= result %>
-          <% if results[student.id][:is_merit] %>
-            <%= image_tag("flags-icon-png-10291.png", size: "12") %>
-          <% elsif results[student.id][:is_resubmit] %>
-            <%= image_tag("flags-icon-png-10292.png", size: "12") %>
-          <% end %>
-
-        </td>
+      <% if results[student.id][:result].present? %>
+        <% result = results[student.id][:result] %>
+          <td class="centre <%= @class_group.set_colour(homework, result) %>"> <%= result %>
+            <% if results[student.id][:is_merit] %>
+              <%= image_tag("flags-icon-png-10291.png", size: "12") %>
+            <% end %>
+      <% else %>
+        <td class="centre"> &mdash; </td>
+      <% end %>
     <% end %>
   </tr>
 <% end %>
+
   </tbody>
 </table>
 </div>

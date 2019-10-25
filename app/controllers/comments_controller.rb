@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
-    @students = @homework.class_group.students.where("is_current").sort_by{ |m| m.last_name.downcase }
+    @students = @homework.class_group.students.where("is_current = ?", true).sort_by{ |m| m.last_name.downcase }
     @comment.presentations.build
   end
 
@@ -86,7 +86,7 @@ class CommentsController < ApplicationController
 
     def get_homework
       @homework = Homework.find(params[:homework_id])
-      @students = @homework.class_group.students.where("is_current").sort_by{ |m| m.last_name.downcase }
+      @students = @homework.class_group.students.where("is_current = ?", true).sort_by{ |m| m.last_name.downcase }
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
