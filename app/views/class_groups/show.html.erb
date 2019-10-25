@@ -40,6 +40,7 @@
 <table>
   <thead>
     <tr>
+      <th>&nbsp;</th>
       <th>First name</th>
       <th>Last name</th>
       <% @homeworks.each do |homework| %>
@@ -51,6 +52,10 @@
 
 <% @students.each do |student| %>
   <tr>
+    <td><% if student.flag %>
+      <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+        <% end %>
+    </td>
     <td><%= student.first_name %></td>
     <td><%= student.last_name %></td>
     <% @homeworks.each do |homework| %>

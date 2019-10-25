@@ -39,6 +39,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.set_flag(params[:flag])
     @comment.homework_id = @homework.id
     respond_to do |format|
       if @comment.save
@@ -56,8 +57,9 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
+        @comment.set_flag(params[:flag])
         format.html { redirect_to homework_comments_url(), notice: 'Comment was successfully updated.' }
-        format.js
+        format.js { redirect_to homework_comments_url(), notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -80,7 +82,6 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
-
     end
 
     def get_homework

@@ -7,10 +7,10 @@
 <table>
   <thead>
     <tr>
+      <th> &nbsp; </th>
       <th>First name</th>
       <th>Last name</th>
       <th>Class</th>
-      <th>Current</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +18,12 @@
   <tbody>
     <% @students.each do |student| %>
       <tr<% unless student.is_current %> class="not_current" <% end %>>
-        <td><%= student.first_name %></td>
+      <td><% if student.flag %>
+        <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+          <% end %>
+      </td>        <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.class_group.name %></td>
-        <td><%= student.is_current %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
