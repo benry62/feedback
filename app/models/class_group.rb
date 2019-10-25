@@ -1,7 +1,7 @@
 class ClassGroup < ApplicationRecord
 
-  has_many :students
-  has_many :homeworks
+  has_many :students, dependent: :destroy
+  has_many :homeworks, dependent: :destroy
 
 
   def get_scores(homework)
