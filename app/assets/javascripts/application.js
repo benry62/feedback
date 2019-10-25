@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
+//= require best_in_place
 
 
 
@@ -31,6 +32,12 @@ $(document).on('turbolinks:load', function() {
   $( "button" ).click(function() {
     $( ".not_current" ).toggle();
   });
+
+  $(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+  });
+
 
 
 });
