@@ -14,4 +14,9 @@ class ClassGroup < ApplicationRecord
   end
 
 
+  def count_students
+      count = Student.where("class_group_id = ? AND is_current = ?", self.id, true).count
+
+  end
+
 end

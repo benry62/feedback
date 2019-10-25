@@ -5,6 +5,7 @@ class ClassGroupsController < ApplicationController
   # GET /class_groups.json
   def index
     @class_groups = ClassGroup.order(:year, :name)
+
   end
 
   # GET /class_groups/1
