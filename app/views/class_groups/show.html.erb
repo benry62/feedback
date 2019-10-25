@@ -40,7 +40,6 @@
 <table>
   <thead>
     <tr>
-      <th>&nbsp;</th>
       <th>First name</th>
       <th>Last name</th>
       <% @homeworks.each do |homework| %>
@@ -52,11 +51,12 @@
  <% #really what I want is to loop through all the homeworks, build an array that has the homework title, the homework id and all the scores in it with the scores listed against the student id. that way I can just pull out the title above, and as I loop through the students use the student id to pull out the relevant score for that homework %>
 <% @students.each do |student| %>
   <tr>
-    <td>&nbsp;</td>
     <td><%= student.first_name %></td>
     <td><%= student.last_name %></td>
-    <% student.comments.each do |comment| %>
-      <td> <%= comment.result %> </td>
+    <% @homeworks.each do |homework| %>
+      <% results = @class_group.get_scores(homework) %>
+      <% result = results[student.id] %>
+        <td class="<%= @class_group.set_colour(homework, result) %>"> <%= result %> </td>
     <% end %>
   </tr>
 <% end %>

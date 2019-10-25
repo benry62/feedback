@@ -5,7 +5,8 @@ class ClassGroup < ApplicationRecord
 
 
   def get_scores(homework)
-    comments = Comment.where("homework_id = ?", homework.id)
+
+    comments = Comment.where("homework_id = ? ", homework.id)
     scores = Hash.new
     comments.each do |comment|
       scores.store(comment.student_id, comment.result)
@@ -16,7 +17,19 @@ class ClassGroup < ApplicationRecord
 
   def count_students
       count = Student.where("class_group_id = ? AND is_current = ?", self.id, true).count
+  end
 
+
+  def set_colour(homework, result)
+    total_score = homework.score
+    if result.to_f/total_score.to_f > 0.85
+      css_class = "merit"
+    elsif result.to_f/total_score.to_f < 0.49
+      css_class = "resubmit"
+    else
+      css_class = 'amber'
+    end
+    css_class
   end
 
 end

@@ -79,6 +79,20 @@
 
 #class_group_page_archive {
   background-color: #e1ebf5;
+}
 
+.resubmit {
+  background-color: #FFC0CB;
+}
 
+.merit {
+  background-color: #cce3b5;
+}
+
+.amber {
+  background-color: #FFFFE0;
+}
+
+.null {
+  background-color: #FFFFFF;
 }
