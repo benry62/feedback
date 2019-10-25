@@ -253,6 +253,38 @@ ALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
 
 
 --
+-- Name: users; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.users (
+    id bigint NOT NULL,
+    email character varying,
+    password_digest character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
 -- Name: class_groups id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -292,6 +324,13 @@ ALTER TABLE ONLY public.presentations ALTER COLUMN id SET DEFAULT nextval('publi
 --
 
 ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
@@ -13012,6 +13051,7 @@ COPY public.schema_migrations (version) FROM stdin;
 20191006104154
 20191021201037
 20191022203938
+20191024165152
 \.
 
 
@@ -13294,6 +13334,15 @@ COPY public.students (id, last_name, first_name, class_group_id, created_at, upd
 
 
 --
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.users (id, email, password_digest, created_at, updated_at) FROM stdin;
+1	ben@benrooney.com	$2a$12$Fl5Nnst7jU/Sozn96Tw0iOy8DAhVLU31n5EAjmqzQ3Zjo.w/2gf1a	2019-10-24 16:54:41.969043	2019-10-24 16:54:41.969043
+\.
+
+
+--
 -- Name: class_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -13333,6 +13382,13 @@ SELECT pg_catalog.setval('public.presentations_id_seq', 10573, true);
 --
 
 SELECT pg_catalog.setval('public.students_id_seq', 300, true);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
@@ -13397,6 +13453,21 @@ ALTER TABLE ONLY public.schema_migrations
 
 ALTER TABLE ONLY public.students
     ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 
 
 --

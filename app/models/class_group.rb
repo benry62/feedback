@@ -5,10 +5,10 @@ class ClassGroup < ApplicationRecord
 
 
   def get_scores(homework)
-    comments = Comments.where("homework_id = ?", homework.id)
+    comments = Comment.where("homework_id = ?", homework.id)
     scores = Hash.new
     comments.each do |comment|
-      scores.store!(comment.student_id, comment.score)
+      scores.store(comment.student_id, comment.result)
     end
     scores
   end
