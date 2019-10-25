@@ -17,7 +17,7 @@
     <% @homeworks.each do |homework| %>
     <% unless homework.class_group.is_archive == true %>
       <tr class="c<%= homework.class_group.name %>">
-        <td><%= homework.class_group.name %></td>
+        <td><%= link_to homework.class_group.name, class_group_path(homework.class_group) %></td>
         <td><%= homework.date.strftime("%d %b %y")%></td>
         <td><%= homework.title %></td>
         <td><%= homework.is_worksheet %></td>

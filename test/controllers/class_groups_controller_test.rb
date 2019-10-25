@@ -17,7 +17,7 @@ class ClassGroupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create class_group" do
     assert_difference('ClassGroup.count') do
-      post class_groups_url, params: { class_group: { name: @class_group.name, number_in_class: @class_group.number_in_class, year: @class_group.year } }
+      post class_groups_url, params: { class_group: { name: @class_group.name,  year: @class_group.year } }
     end
 
     assert_redirected_to class_group_url(ClassGroup.last)

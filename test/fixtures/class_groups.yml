@@ -3,9 +3,8 @@
 one:
   name: MyText
   year: 1
-  number_in_class: 1
+
 
 two:
   name: MyText
   year: 1
-  number_in_class: 1

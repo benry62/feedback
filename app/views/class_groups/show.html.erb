@@ -43,20 +43,27 @@
       <th>First name</th>
       <th>Last name</th>
       <% @homeworks.each do |homework| %>
-        <th><p><%= homework.title[0..3]%></p><p><%= homework.score %></th>
+        <th><p><%= link_to homework.title[0..3], homework_comments_path(homework)%><br /><%= homework.score %></th>
         <% end %>
     </tr>
   </thead>
   <tbody>
- <% #really what I want is to loop through all the homeworks, build an array that has the homework title, the homework id and all the scores in it with the scores listed against the student id. that way I can just pull out the title above, and as I loop through the students use the student id to pull out the relevant score for that homework %>
+
 <% @students.each do |student| %>
   <tr>
     <td><%= student.first_name %></td>
     <td><%= student.last_name %></td>
     <% @homeworks.each do |homework| %>
       <% results = @class_group.get_scores(homework) %>
-      <% result = results[student.id] %>
-        <td class="<%= @class_group.set_colour(homework, result) %>"> <%= result %> </td>
+      <% result = results[student.id][:result] %>
+        <td class="<%= @class_group.set_colour(homework, result) %>"> <%= result %>
+          <% if results[student.id][:is_merit] %>
+            <%= image_tag("flags-icon-png-10291.png", size: "12") %>
+          <% elsif results[student.id][:is_resubmit] %>
+            <%= image_tag("flags-icon-png-10292.png", size: "12") %>
+          <% end %>
+
+        </td>
     <% end %>
   </tr>
 <% end %>
