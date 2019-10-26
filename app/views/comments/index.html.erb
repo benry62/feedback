@@ -44,6 +44,9 @@
           <% if comment.not_submitted %>
             <%= image_tag("warning-16", size: "16") %>
           <% end %>
+          <% if comment.resubmit %>
+            <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+          <% end %>
         </td>
         <td><%= comment.www %></td>
         <td><%= comment.area_for_development %></td>

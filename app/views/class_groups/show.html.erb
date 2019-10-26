@@ -66,6 +66,9 @@
             <% if results[student.id][:is_merit] %>
               <%= image_tag("flags-icon-png-10291.png", size: "12") %>
             <% end %>
+            <% if results[student.id][:resubmit] %>
+              <%= image_tag("flags-icon-png-10292.png", size: "12") %>
+            <% end %>
             <% if results[student.id][:not_submitted] %>
               <%= image_tag("warning-16", size: "12") %>
             <% end %>
