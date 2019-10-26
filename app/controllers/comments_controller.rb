@@ -45,6 +45,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to homework_comments_url, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
+        format.js { redirect_to homework_comments_url(), notice: 'Comment was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
