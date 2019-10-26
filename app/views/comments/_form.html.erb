@@ -16,6 +16,7 @@
     <%= form.collection_select(:student_id, @students, :id, :full_name, prompt: true ) %>
   </div>
 -->
+
   <div class="field">
     <%= form.label :result, "Score" %>
     <%= form.number_field :result, size: 3%>
@@ -24,22 +25,22 @@
 
   <div class="field_in_line">
     <%= form.label :www, "Comments" %>
-    <%= form.text_area :www, cols: 60, rows: 7%>
+    <%= form.text_area :www, cols: 60, rows: 8%>
   </div>
 
   <div class="field_in_line">
     <%= form.label :area_for_development %>
-    <%= form.text_area :area_for_development, cols: 60, rows: 7 %>
+    <%= form.text_area :area_for_development, cols: 60, rows: 8 %>
   </div>
 
   <div class="field_in_line">
     <%= form.label :dirt, "DIRT" %>
-    <%= form.text_area :dirt, cols: 12, rows: 7 %>
+    <%= form.text_area :dirt, cols: 11, rows: 8 %>
   </div>
 
   <div class="field_in_line">
     <%= form.label :spelling %>
-    <%= form.text_area :spelling, cols: 12, rows: 7 %>
+    <%= form.text_area :spelling, cols: 11, rows: 8 %>
   </div>
 
 <div class="checkbox_field">
@@ -58,17 +59,26 @@
   <%= form.check_box :resubmit %>
 </div>
 -->
-<div class="field">
-  <%= form.label :merit %>
-  <%= form.check_box :merit %>
-</div>
 
-<div class="field">
-  <%= label_tag :flag %>
-  <%= check_box_tag 'flag'  %>
-</div>
+<div style="clear:right">
+  <div id="main"">
+    <div>
+      <%= form.label :merit %>
+      <%= form.check_box :merit %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit 'Submit', :id => 'form_submit' %>
+    <div>
+      <%= label_tag :flag %>
+      <%= check_box_tag 'flag'  %>
+    </div>
   </div>
+  <br />
+  <div >
+    <%= form.submit 'Submit', :id => 'form_submit' %> &nbsp; &nbsp;
+    <%= link_to "cancel", "#", id: "cancel"%>
+  </div>
+
+</div>
+<br />
+
 <% end %>

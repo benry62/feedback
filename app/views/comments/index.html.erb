@@ -4,7 +4,9 @@
 <h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
 <p>Number students: <%= @homework.class_group.students.size  =%></p>
 <p>Maximum score: <%= @homework.score  =%></p>
-<table id="myTable" class="tablesorter">
+<div id="task-form" style="display:none; border: 1px black solid; padding: 5px;"></div>
+
+<table>
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -25,7 +27,7 @@
           <%= image_tag("flags-icon-png-10292.png", size: "16") %>
             <% end %>
         </td>
-        <td><%= link_to comment.student.full_name, edit_homework_comment_url(@homework, comment), :id => "edit_#{comment.id}" %></td>
+        <td><%= link_to comment.student.full_name, edit_homework_comment_url(@homework, comment), :id => "edit_#{comment.id}" , remote: true%></td>
         <td><%= comment.result %>
           <% if comment.merit %>
             <%= image_tag("flags-icon-png-10291.png", size: "16") %>

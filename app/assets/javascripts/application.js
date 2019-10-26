@@ -28,6 +28,10 @@ $(document).on('turbolinks:load', function() {
   });
 
 
+  $( "#cancel" ).click(function() {
+    alert("click");
+  });
+
 
 
 

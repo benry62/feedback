@@ -1,1 +1,2 @@
-$('[id^=edit_THIS_DOES_NOT_YET_WORK]').after('<%= j render("form") %>');
+$('#task-form').html("<%= j (render 'form') %>");
+$('#task-form').slideDown(350);
