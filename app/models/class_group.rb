@@ -21,6 +21,10 @@ class ClassGroup < ApplicationRecord
   end
 
 
+  def number_flags
+    count = Student.where("class_group_id = ? AND flag = ?", self.id, true).count
+  end
+
   def set_colour(homework, result)
     total_score = homework.score
     if result.to_f/total_score.to_f > 0.85
