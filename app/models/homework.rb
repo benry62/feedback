@@ -10,7 +10,7 @@ class Homework < ApplicationRecord
   def build_comments
     students = self.class_group.students
     students.sort_by(&:last_name).each do |student|
-      comment = Comment.new({:homework_id => self.id, :student_id => student.id, :result => "0"})
+      comment = Comment.new({:homework_id => self.id, :student_id => student.id, :result => "-1"})
       comment.save
     end
 
