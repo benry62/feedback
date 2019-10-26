@@ -20,8 +20,11 @@
   <div class="field">
     <%= form.label :result, "Score" %>
     <%= form.number_field :result, size: 3%>
-  </div>
 
+
+  <%= form.label :not_submitted %>
+  <%= form.check_box :not_submitted %>
+  </div>
 
   <div class="field_in_line">
     <%= form.label :www, "Comments" %>

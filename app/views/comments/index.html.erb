@@ -4,6 +4,15 @@
 <h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
 <p>Number students: <%= @homework.class_group.students.size  =%></p>
 <p>Maximum score: <%= @homework.score  =%></p>
+<% bad_uns = @homework.get_not_submitted %>
+<p>Not submitted: <%= bad_uns.count %></p>
+<% @homework.get_not_submitted.each do |b_u| %>
+  <ul>
+  <li><%= b_u.student.full_name %></li>
+  </ul>
+<% end %>
+
+
 <div id="task-form" style="display:none; border: 1px black solid; padding: 5px;"></div>
 
 <table>
@@ -31,6 +40,9 @@
         <td><%= comment.result %>
           <% if comment.merit %>
             <%= image_tag("flags-icon-png-10291.png", size: "16") %>
+          <% end %>
+          <% if comment.not_submitted %>
+            <%= image_tag("warning-16", size: "16") %>
           <% end %>
         </td>
         <td><%= comment.www %></td>

@@ -16,4 +16,9 @@ class Homework < ApplicationRecord
 
   end
 
+  def get_not_submitted
+    not_submitted = Comment.where("homework_id = ? AND not_submitted = ?", self.id, true)
+  end
+
+
 end

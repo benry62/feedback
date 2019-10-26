@@ -105,6 +105,7 @@ class CommentsController < ApplicationController
         :homework_id,
         :resubmit,
         :merit,
+        :not_submitted,
         presentation_item_ids: []
         )
     end
