@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<h2> <%= @comment.student.full_name %> </h2>
+<h2 class="head"> <%= @comment.student.full_name %> </h2>
 
 <!--
   <div class="field">
@@ -20,79 +20,88 @@
   </div>
 -->
 
-  <div class="field">
-    <%= form.label :result, "Score" %>
-    <%= form.number_field :result, size: 3%>
+<div class="wrapper" >
+  <div class="col" style="width:363px">
+    <div class="field">
+      <%= form.label :result, "Score" %>
+      <%= form.number_field :result, size: 3%>
+    </div>
+    <div class="field " style="clear:both;">
+        <%= form.check_box :not_submitted %>
+        <%= form.label :not_submitted %>
 
-
-  <%= form.label :not_submitted %>
-  <%= form.check_box :not_submitted %>
+    </div>
+  </div>
+  <div class="col">
+    <%= form.fields_for :note do |note_form| %>
+      Notes<br />
+      <%= note_form.text_area :text, cols: 57, rows: 8 %>
+    <% end %>
   </div>
 
-  <div class="field_in_line">
-    <%= form.label :www, "Comments" %>
+</div>
+
+<div class="wrapper">
+
+  <div class="col">
+    <%= form.label :www, "General comments" %>
     <%= form.text_area :www, cols: 57, rows: 8%>
   </div>
 
-  <div class="field_in_line">
-    <%= form.label :area_for_development %>
+  <div class="col">
+    <%= form.label :area_for_development, "Homework comments"%>
     <%= form.text_area :area_for_development, cols: 57, rows: 8 %>
   </div>
 
-  <div class="field_in_line">
+  <div class="col">
     <%= form.label :dirt, "DIRT" %>
     <%= form.text_area :dirt, cols: 10, rows: 8 %>
   </div>
 
-  <div class="field_in_line">
+  <div class="col">
     <%= form.label :spelling %>
     <%= form.text_area :spelling, cols: 10, rows: 8 %>
   </div>
 
-<div class="checkbox_field">
-<%= form.fields_for :presentations do |pres_form| %>
-  <%= form.collection_check_boxes(:presentation_item_ids, PresentationItem.all, :id, :full_item) do |cb| %>
-    <div style="clear:both;">
-     <%= cb.check_box %>
-     <%= cb.label(:style => "float:left;") %>
-   </div>
-  <% end %>
-<% end %>
-</div>
-
-<div class="field">
-  <%= form.label :resubmit %>
-  <%= form.check_box :resubmit %>
-</div>
-
-
-<div style="clear:right">
-  <div id="main"">
-    <div>
-      <%= form.label :merit %>
-      <%= form.check_box :merit %>
-    </div>
-
-    <div>
-      <%= label_tag :flag %>
-      <%= check_box_tag 'flag'  %>
-    </div>
+  <div class="col" style="width:200px">
+    <%= form.fields_for :presentations do |pres_form| %>
+      <%= form.collection_check_boxes(:presentation_item_ids, PresentationItem.all, :id, :full_item) do |cb| %>
+        <%= cb.check_box %>
+        <%= cb.label %>
+        <br />
+      <% end %>
+    <% end %>
   </div>
-  <br />
 
-  <%= form.fields_for :note do |note_form| %>
-    <%= note_form.label :text, "Notes"%>
-    <%= note_form.text_area :text, cols: 57, rows: 8 %>
-  <% end %>
+</div>
 
-  <div >
-    <%= form.submit 'Submit', :id => 'form_submit' %> &nbsp; &nbsp;
-    <%= link_to "cancel", "#", id: "cancel"%>
+
+<div class="wrapper; width:270px">
+  <div class="col" style="width:90px;">
+    <%= form.check_box :resubmit %>
+    <%= form.label :resubmit %>
+  </div>
+
+  <div class="col" style="width:70px">
+    <%= form.check_box :merit %>
+    <%= form.label :merit %>
+  </div>
+
+  <div class="col">
+    <%= check_box_tag 'flag'  %>
+    <%= label_tag :flag %>
+
   </div>
 </div>
-
-
 
 <br />
+
+
+<%= form.submit 'Submit', :id => 'form_submit' %> &nbsp; &nbsp;
+<%= link_to "cancel", "#", id: "cancel"%>
+
+
+
+
 
 <% end %>

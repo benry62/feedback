@@ -15,7 +15,7 @@
  */
 
 
-
+input, label { display: inline; }
 
 
  /* The navigation bar */
@@ -103,4 +103,20 @@
 
 .centre {
   text-align: center;
+}
+
+.wrapper {
+  display: table;
+  width:100%;
+}
+
+.col {
+  display: table-cell;
+  padding:5px;
+/*  border: 1px blue dashed; */
+}
+
+.head {
+  width:100%;
+  float:left;
 }

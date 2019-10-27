@@ -1,33 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<div id="head" style="width:100%; float: left">
+<div class="head" style="width:100%; float:left">
   <h2>Report: <%= @homework.class_group.name %> <%= @homework.title %> </h2>
   <h3><%= @homework.date.strftime("%d %b %y")%></h3>
 </div>
 
-<div id="wrapper" style="display: table;width:100%">
+<div class="wrapper">
 
-  <div id = "left" style="display: table-cell; width:20%; border:1px solid black; padding:10px">
+  <div class = "col" style="border:1px solid black;">
     <% merits = @homework.get_attribute("merit") %>
-    <h3>Merits <%= merits.count %></h3>
+    <h3>Merits: <%= merits.count %></h3>
     <% merits.each do |m| %>
       <ul>
       <li><%= m.student.full_name %></li>
       </ul>
     <% end %>
   </div>
-  <div style="display: table-cell; width:20%; border:1px solid black; padding:10px;margin:5px;">
+  <div class = "col" style=" border:1px solid black; ">
     <% resubmit = @homework.get_attribute("resubmit") %>
-    <h3>Resubmits <%= resubmit.count %></h3>
+    <h3>Resubmits: <%= resubmit.count %></h3>
     <% resubmit.each do |r| %>
       <ul>
       <li><%= r.student.full_name %></li>
       </ul>
     <% end %>
   </div>
-  <div style="display: table-cell; width:20%; border:1px solid black; padding:10px">
+  <div class = "col" style="border:1px solid black; ">
     <% not_submitted = @homework.get_attribute("not_submitted") %>
-    <h3>Not submitted <%= not_submitted.count %></h3>
+    <h3>Not submitted: <%= not_submitted.count %></h3>
     <% not_submitted.each do |n| %>
       <ul>
       <li><%= n.student.full_name %></li>
