@@ -10,6 +10,7 @@
       <th> &nbsp; </th>
       <th>First name</th>
       <th>Last name</th>
+      <th> &nbsp; </th>
       <th>Class</th>
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,13 @@
           <% end %>
       </td>        <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
+        <td><% if student.is_pp %>
+              <%= image_tag("blue_flag.png", size: "16", alt: "PP") %>
+            <% end %>
+            <% if student.is_sen %>
+              <%= image_tag("orange_flag.png", size: "16", alt: "SEN") %>
+            <% end %>
+        </td>
         <td><%= student.class_group.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>

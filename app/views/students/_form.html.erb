@@ -16,12 +16,20 @@
     <%= form.text_field :first_name %>
   </div>
 
-
   <div class="field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
 
+  <div class="field">
+    <%= form.label :is_pp,  "PP" %>
+    <%= form.check_box :is_pp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_sen, "SEN" %>
+    <%= form.check_box :is_sen %>
+  </div>
 
   <div class="field">
     <%= form.label :class_group_id %>
@@ -37,6 +45,9 @@
     <%= form.label :flag %>
     <%= form.check_box :flag %>
   </div>
+
+
+
 
   <div class="actions">
     <%= form.submit %>

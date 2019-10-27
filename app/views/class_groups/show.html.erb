@@ -43,6 +43,7 @@
       <th>&nbsp;</th>
       <th>First name</th>
       <th>Last name</th>
+      <th>&nbsp;</th>
       <% @homeworks.each do |homework| %>
         <th><p><%= link_to homework.title[0..3], homework_comments_path(homework)%><br /><%= homework.score %></th>
         <% end %>
@@ -50,40 +51,46 @@
   </thead>
   <tbody>
 
-<% @students.each do |student| %>
-  <tr>
-    <td><% if student.flag %>
-      <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+  <% @students.each do |student| %>
+    <tr>
+      <td><% if student.flag %>
+        <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+          <% end %>
+      </td>
+      <td><%= link_to student.first_name, edit_student_url(student) %></td>
+      <td><%= link_to student.last_name, edit_student_url(student) %></td>
+      <td><% if student.is_pp %>
+            <%= image_tag("blue_flag.png", size: "16", alt: "PP") %>
+          <% end %>
+          <% if student.is_sen %>
+            <%= image_tag("orange_flag.png", size: "16", alt: "SEN") %>
+          <% end %>
+      </td>
+      <% @homeworks.each do |homework| %>
+        <% results = @class_group.get_scores(homework) %>
+        <% if results[student.id][:result].present? %>
+          <% result = results[student.id][:result] %>
+            <td class="centre <%= @class_group.set_colour(homework, result) %>">
+              <% if result == -1 %>
+                  &mdash;
+                <% else %>
+                  <%= result %>
+              <% end %>
+              <% if results[student.id][:is_merit] %>
+                <%= image_tag("flags-icon-png-10291.png", size: "12") %>
+              <% end %>
+              <% if results[student.id][:resubmit] %>
+                <%= image_tag("flags-icon-png-10292.png", size: "12") %>
+              <% end %>
+              <% if results[student.id][:not_submitted] %>
+                <%= image_tag("warning-16", size: "12") %>
+              <% end %>
+        <% else %>
+          <td class="centre"> &mdash; </td>
         <% end %>
-    </td>
-    <td><%= link_to student.first_name, edit_student_url(student) %></td>
-    <td><%= link_to student.last_name, edit_student_url(student) %></td>
-    <% @homeworks.each do |homework| %>
-      <% results = @class_group.get_scores(homework) %>
-      <% if results[student.id][:result].present? %>
-        <% result = results[student.id][:result] %>
-          <td class="centre <%= @class_group.set_colour(homework, result) %>">
-            <% if result == -1 %>
-              &mdash;
-            <% else %>
-              <%= result %>
-            <% end %>
-            <% if results[student.id][:is_merit] %>
-              <%= image_tag("flags-icon-png-10291.png", size: "12") %>
-            <% end %>
-            <% if results[student.id][:resubmit] %>
-              <%= image_tag("flags-icon-png-10292.png", size: "12") %>
-            <% end %>
-            <% if results[student.id][:not_submitted] %>
-              <%= image_tag("warning-16", size: "12") %>
-            <% end %>
-      <% else %>
-        <td class="centre"> &mdash; </td>
       <% end %>
-    <% end %>
-  </tr>
-<% end %>
-
+    </tr>
+  <% end %>
   </tbody>
 </table>
 </div>
