@@ -6,7 +6,7 @@ class Student < ApplicationRecord
 
   belongs_to :class_group
   has_many :comments
-
+  has_many :notes
 
 
   def full_name
