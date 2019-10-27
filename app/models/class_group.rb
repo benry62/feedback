@@ -27,7 +27,9 @@ class ClassGroup < ApplicationRecord
 
   def set_colour(homework, result)
     total_score = homework.score
-    if result.to_f/total_score.to_f > 0.85
+    if result == -1
+      css_class = 'amber'
+    elsif result.to_f/total_score.to_f > 0.85
       css_class = "merit"
     elsif result.to_f/total_score.to_f < 0.49
       css_class = "resubmit"

@@ -62,7 +62,12 @@
       <% results = @class_group.get_scores(homework) %>
       <% if results[student.id][:result].present? %>
         <% result = results[student.id][:result] %>
-          <td class="centre <%= @class_group.set_colour(homework, result) %>"> <%= result %>
+          <td class="centre <%= @class_group.set_colour(homework, result) %>">
+            <% if result == -1 %>
+              &mdash;
+            <% else %>
+              <%= result %>
+            <% end %>
             <% if results[student.id][:is_merit] %>
               <%= image_tag("flags-icon-png-10291.png", size: "12") %>
             <% end %>

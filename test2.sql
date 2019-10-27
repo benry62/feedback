@@ -1836,7 +1836,6 @@ COPY public.comments (id, student_id, grade, www, area_for_development, dirt, sp
 1484	22	\N	Your work on cumulative frequency is good. Your work on box plots is good. Well done. Use your yellow sheet to guide you in your revision over the Easter break.\tThank you for resubmitting HWs 11 & 12. They have both been signed off.  I note you say you found cumulative frequency hard. Why was that? 	When the question says "exact length" it means leave it as a surd - as it says in the panel. You were not bad at finding the gradient of the perpendicular, but you used the wrong values to find the y-intercept. Use the (x,y) pair you were given. eg (9,8). You wrote y= x/3 + c. So 8 = (9)/3 + c, 8 = 3 + c so c = 5.	Correct your mistakes, then DIRT 1\t		2019-04-03 19:47:49.931659	2019-04-03 19:47:49.931659	79	f	f	\N	f	f
 1763	144	\N	This is the last homework I will mark in your book. It has been a pleasure to teach you this year. Well done. You have a great future in maths.	Nearly perfect homework. You left off the key ...	Correct your mistakes then DIRT 2\t		2019-07-07 12:06:12.911091	2019-07-07 12:06:55.027071	92	f	t	\N	f	f
 1764	159	\N	This is the last homework I will mark in your book. It has been a pleasure to teach you this year. Well done. I know maths is not your favourite subject, but believe in yourself. You are much better than you think you are.	Nearly perfect homework. One minor mistake	Correct your mistakes then DIRT 2\t		2019-07-07 12:07:23.516425	2019-07-07 12:07:23.516425	92	f	t	\N	f	f
-2002	276	\N		Check your addition on the first question. You made a mistake.\tWhen calculating factors we only include integers (otherwise there would be an infinite number of factors).\t	Correct your mistakes then DIRT 1\t		2019-10-16 18:36:32.990964	2019-10-16 18:36:32.990964	105	f	f	25	f	f
 1485	223	\N	Your work on cumulative frequency is good. Your work on box plots is good. Well done. Use your yellow sheet to guide you in your revision over the Easter break.	Not a bad homework at all. When the question says "exact length" it means leave it as a surd - as it says in the panel. Whenever possible, avoid doing intermediate calculations - you simply introduce errors that way.  When finding the perpendicular gradient to the line with a gradient of m, the perpendicular is (-1/m). So if the gradient is -3, the perpendicular is 1/3. If the gradient is 1/2, then the gradient of the perpendicular is -2. 	Correct your mistakes, then DIRT 3		2019-04-03 19:52:20.942882	2019-04-03 19:52:20.942882	79	f	f	\N	f	f
 1491	15	\N	Your work on cumulative frequency is good. Your work on box plots is good. Well done. Use your yellow sheet to guide you in your revision over the Easter break.\t	Not a bad homework at all. When the question says "exact length" it means leave it as a surd - as it says in the panel. Whenever possible, avoid doing intermediate calculations - you simply introduce errors that way. When finding the perpendicular gradient to the line with a gradient of m, the perpendicular is (-1/m). So if the gradient is -3, the perpendicular is 1/3. If the gradient is 1/2, then the gradient of the perpendicular is -2.\t	Correct your mistakes, then DIRT 1\t		2019-04-03 20:13:53.182781	2019-04-03 20:13:53.182781	79	f	f	\N	f	f
 1479	23	\N	Your work on cumulative frequency is good. Your work on box plots is good. Well done. Use your yellow sheet to guide you in your revision over the Easter break. You have tests the first full week you are back.	Would you care to explain how your work and Amber's are identical?\r\nWhen the question says "exact length" it means leave it as a surd - as it says in the panel. When drawing your triangles, remember to label them so the examiner can follow your line of thought. When finding the perpendicular gradient to the line with a gradient of m, the perpendicular is (-1/m). So if the gradient is -3, the perpendicular is 1/3	Correct your mistakes, then DIRT 1\t		2019-04-03 19:13:16.579066	2019-04-03 20:01:38.608916	79	f	f	\N	f	f
@@ -1908,7 +1907,7 @@ COPY public.comments (id, student_id, grade, www, area_for_development, dirt, sp
 1551	172	\N		 am sorry to say that you have to resubmit this homework. I have told you many times that you MUST SHOW YOUR WORKINGS. There were a lot of marks for workings. As you didn't show any, you didn't get any. In the probability question, can you have a probability > 1? Look again at adding fractions. You did not follow the worked example. 1/6 + 3/24 is most assuredly NOT 4/30. You have to find a common denominator.	Correct your mistakes, then DIRT 3\t		2019-04-29 20:02:18.784951	2019-04-29 20:02:18.784951	82	t	f	\N	f	f
 1552	176	\N		Very good homework. When asked how many outcomes, the best thing to do is to list all of them. There are more than four. Remember always simplify when you can.\t	Correct your mistakes, then DIRT 3\t		2019-04-29 20:03:59.379264	2019-04-29 20:03:59.379264	82	f	f	\N	f	f
 1553	164	\N		Have a look again at the adding/subtracting fractions problems. You need to find a common denominator so they can be added/subtracted. Look at the worked example at the bottom of the question paper.	Correct your mistakes, then DIRT 3\t		2019-04-29 20:06:52.999908	2019-04-29 20:06:52.999908	82	f	f	\N	f	f
-2004	293	\N		Not submitted. Detention.			2019-10-16 18:38:10.808775	2019-10-16 18:38:11.026955	105	t	f	0	f	f
+2004	293	\N		Resubmitted. Better but only just			2019-10-16 18:38:10.808775	2019-10-26 14:17:34.396284	105	t	f	14	f	f
 1554	166	\N		am sorry to say that you have to resubmit this homework. I have told you many times that you MUST SHOW YOUR WORKINGS. There were a lot of marks for workings. As you didn't show any, you didn't get any. Look again at adding fractions. You did not follow the worked example. 1/6 + 3/24 is most assuredly NOT 4/30. You have to find a common denominator.\t	Correct your mistakes, then DIRT 3\t		2019-04-29 20:08:54.14164	2019-04-29 20:08:54.14164	82	t	f	\N	f	f
 1555	173	\N		Very good homework. Remember always simplify when you can.\t	Correct your mistakes, then DIRT 3\t		2019-04-29 20:09:47.891221	2019-04-29 20:09:47.891221	82	f	f	\N	f	f
 1556	163	\N		You *just* made the pass mark.  Look again at adding fractions. You did not follow the worked example. 1/6 + 3/24 is most assuredly NOT 4/30. You have to find a common denominator.\t	Correct your mistakes, then DIRT 3\t		2019-04-29 20:11:30.446878	2019-04-29 20:11:30.446878	82	f	f	\N	f	f
@@ -2398,6 +2397,36 @@ COPY public.comments (id, student_id, grade, www, area_for_development, dirt, sp
 1891	228	\N	Thank you for resubmitting the homework. Some very good plenary comments. Well done. I hope after today's revision lesson you feel more confident?	Your work on completing the square was mostly very good. You were 100% correct in working out the bracket, but you a couple of times were a bit confused about what to add or subtract. Have another look at bearings. Remember they are measured clockwise from the north. Think about alternate/complementary angles to help you. Have another look at the last two questions on geometric progressions.	Correct your mistakes then DIRT 2\t		2019-09-29 11:13:27.837474	2019-10-25 12:45:56.60995	99	f	f	30	f	f
 1895	81	\N	I hope after today's revision lesson you feel more confident? Your work on simultaneous equations is okay, but are you quite happy with how to solve a quadratic and linear equation?\t	Your work on completing the square was excellent. Have another look at bearings. Remember they are measured clockwise from the north. Think about alternate/complementary angles to help you. Have another look at the last two questions on geometric progressions.\t	Correct your mistakes then DIRT 2\t		2019-09-29 11:27:25.174356	2019-10-25 12:44:31.20685	99	f	t	32	f	f
 1854	280	\N	You have made a good start to your time at Chelmer Valley High School. Your book is well presented and is at the standard I require. You have demonstrated a good understanding of factors and multiples. You have demonstrated a good understanding of negative numbers.\t	Homework not submitted. Detention set - and completed.\t			2019-09-25 15:16:13.616479	2019-10-26 11:16:32.110466	98	t	f	0	f	t
+2002	276	\N		Check your addition on the first question. You made a mistake.\tWhen calculating factors we only include integers (otherwise there would be an infinite number of factors).\t	Correct your mistakes then DIRT 1\t		2019-10-16 18:36:32.990964	2019-10-26 14:27:25.534042	105	f	f	25	f	f
+2287	11	\N	\N	\N	\N	\N	2019-10-26 16:07:50.087563	2019-10-26 16:07:50.087563	124	f	f	-1	f	f
+2288	13	\N	\N	\N	\N	\N	2019-10-26 16:07:50.103551	2019-10-26 16:07:50.103551	124	f	f	-1	f	f
+2289	14	\N	\N	\N	\N	\N	2019-10-26 16:07:50.110676	2019-10-26 16:07:50.110676	124	f	f	-1	f	f
+2290	15	\N	\N	\N	\N	\N	2019-10-26 16:07:50.118183	2019-10-26 16:07:50.118183	124	f	f	-1	f	f
+2291	273	\N	\N	\N	\N	\N	2019-10-26 16:07:50.126124	2019-10-26 16:07:50.126124	124	f	f	-1	f	f
+2292	16	\N	\N	\N	\N	\N	2019-10-26 16:07:50.134106	2019-10-26 16:07:50.134106	124	f	f	-1	f	f
+2293	213	\N	\N	\N	\N	\N	2019-10-26 16:07:50.143064	2019-10-26 16:07:50.143064	124	f	f	-1	f	f
+2294	17	\N	\N	\N	\N	\N	2019-10-26 16:07:50.149609	2019-10-26 16:07:50.149609	124	f	f	-1	f	f
+2295	19	\N	\N	\N	\N	\N	2019-10-26 16:07:50.157076	2019-10-26 16:07:50.157076	124	f	f	-1	f	f
+2296	221	\N	\N	\N	\N	\N	2019-10-26 16:07:50.165789	2019-10-26 16:07:50.165789	124	f	f	-1	f	f
+2297	20	\N	\N	\N	\N	\N	2019-10-26 16:07:50.17446	2019-10-26 16:07:50.17446	124	f	f	-1	f	f
+2298	21	\N	\N	\N	\N	\N	2019-10-26 16:07:50.185419	2019-10-26 16:07:50.185419	124	f	f	-1	f	f
+2299	23	\N	\N	\N	\N	\N	2019-10-26 16:07:50.192065	2019-10-26 16:07:50.192065	124	f	f	-1	f	f
+2300	24	\N	\N	\N	\N	\N	2019-10-26 16:07:50.201062	2019-10-26 16:07:50.201062	124	f	f	-1	f	f
+2301	25	\N	\N	\N	\N	\N	2019-10-26 16:07:50.207743	2019-10-26 16:07:50.207743	124	f	f	-1	f	f
+2302	26	\N	\N	\N	\N	\N	2019-10-26 16:07:50.216734	2019-10-26 16:07:50.216734	124	f	f	-1	f	f
+2303	27	\N	\N	\N	\N	\N	2019-10-26 16:07:50.224475	2019-10-26 16:07:50.224475	124	f	f	-1	f	f
+2304	29	\N	\N	\N	\N	\N	2019-10-26 16:07:50.232416	2019-10-26 16:07:50.232416	124	f	f	-1	f	f
+2305	30	\N	\N	\N	\N	\N	2019-10-26 16:07:50.239551	2019-10-26 16:07:50.239551	124	f	f	-1	f	f
+2306	31	\N	\N	\N	\N	\N	2019-10-26 16:07:50.248764	2019-10-26 16:07:50.248764	124	f	f	-1	f	f
+2307	32	\N	\N	\N	\N	\N	2019-10-26 16:07:50.260102	2019-10-26 16:07:50.260102	124	f	f	-1	f	f
+2308	222	\N	\N	\N	\N	\N	2019-10-26 16:07:50.267593	2019-10-26 16:07:50.267593	124	f	f	-1	f	f
+2309	34	\N	\N	\N	\N	\N	2019-10-26 16:07:50.274552	2019-10-26 16:07:50.274552	124	f	f	-1	f	f
+2310	35	\N	\N	\N	\N	\N	2019-10-26 16:07:50.283296	2019-10-26 16:07:50.283296	124	f	f	-1	f	f
+2311	36	\N	\N	\N	\N	\N	2019-10-26 16:07:50.290808	2019-10-26 16:07:50.290808	124	f	f	-1	f	f
+2312	39	\N	\N	\N	\N	\N	2019-10-26 16:07:50.298259	2019-10-26 16:07:50.298259	124	f	f	-1	f	f
+2313	223	\N	\N	\N	\N	\N	2019-10-26 16:07:50.305651	2019-10-26 16:07:50.305651	124	f	f	-1	f	f
+2314	41	\N	\N	\N	\N	\N	2019-10-26 16:07:50.313625	2019-10-26 16:07:50.313625	124	f	f	-1	f	f
+2315	211	\N	\N	\N	\N	\N	2019-10-26 16:07:50.325771	2019-10-26 16:07:50.325771	124	f	f	-1	f	f
 \.
 
 
@@ -2497,6 +2526,7 @@ COPY public.homeworks (id, class_group_id, date, title, created_at, updated_at, 
 97	11	2019-09-20	HW 2: Negative numbers, rotation, subtraction	2019-09-21 11:48:59.211982	2019-10-06 14:39:13.018779	f	f	38
 105	10	2019-10-16	HW 6: Mean, factors, negative numbers	2019-10-16 17:44:27.114853	2019-10-16 17:44:38.056464	t	f	29
 100	13	2019-10-03	HW 2: HCF, Experimental probability, prime factors	2019-10-03 10:45:38.644037	2019-10-25 16:38:41.047859	f	f	26
+124	15	2019-10-26	asdasd	2019-10-26 16:07:50.063451	2019-10-26 16:07:50.063451	f	f	23
 \.
 
 
@@ -13335,7 +13365,6 @@ COPY public.students (id, last_name, first_name, class_group_id, created_at, upd
 41	Wright	Georgie	15	2018-07-28 11:03:11.405635	2018-07-28 11:03:11.405635	t	f
 260	Egerton	Matthew	13	2019-09-01 13:53:16.95945	2019-10-03 10:53:36.097638	t	f
 274	Barker	Kobie	10	2019-09-01 15:27:19.388154	2019-10-25 19:17:05.988592	t	t
-277	Buckley	Isobel	10	2019-09-01 15:28:10.57348	2019-10-25 19:17:22.506744	t	t
 280	Clout	Pippa	10	2019-09-01 15:29:45.812098	2019-10-25 21:57:03.892079	t	t
 163	Ali	Tye	11	2018-07-28 11:55:07.524083	2019-10-25 19:24:15.387135	t	t
 164	Barker	Dakota	11	2018-07-28 11:55:20.9056	2019-10-25 19:24:25.375811	t	t
@@ -13352,6 +13381,7 @@ COPY public.students (id, last_name, first_name, class_group_id, created_at, upd
 293	Print	Oscar	10	2019-09-01 15:33:46.327174	2019-10-25 21:58:00.928028	t	t
 298	Wheeler	Jessica	10	2019-09-01 15:35:01.184506	2019-10-25 21:58:09.931057	t	t
 295	Rawlings	Lenny	10	2019-09-01 15:34:16.382295	2019-10-25 21:58:19.55399	t	t
+277	Buckley	Isobel	10	2019-09-01 15:28:10.57348	2019-10-26 14:39:51.614246	t	f
 \.
 
 
@@ -13375,14 +13405,14 @@ SELECT pg_catalog.setval('public.class_groups_id_seq', 18, true);
 -- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.comments_id_seq', 2222, true);
+SELECT pg_catalog.setval('public.comments_id_seq', 2315, true);
 
 
 --
 -- Name: homeworks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.homeworks_id_seq', 121, true);
+SELECT pg_catalog.setval('public.homeworks_id_seq', 124, true);
 
 
 --

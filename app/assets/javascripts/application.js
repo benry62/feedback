@@ -23,14 +23,24 @@ $(document).on('turbolinks:load', function() {
   $( ".not_current" ).hide();
 
 
+
+
+  $("a[id^='edit_']").click(function(){
+    var tabId = event.target.id.split("_").pop();
+    $("#h").remove();
+    $("#holder").remove();
+    $("#n_" + tabId ).after( "<tr id=\"h\"><td colspan='9'><div id='holder'><td></div></tr>" );
+    })
+
+
   $( "button" ).click(function() {
     $( ".not_current" ).toggle();
   });
 
-
-  $( "#cancel" ).click(function() {
+  $( "a#cancel" ).click(function() {
     alert("click");
   });
+
 
 
 
