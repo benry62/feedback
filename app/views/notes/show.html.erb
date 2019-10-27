@@ -7,12 +7,17 @@
 
 <p>
   <strong>Student:</strong>
-  <%= @note.student_id %>
+  <%= @note.comment.homework.class_group.student.full_name %>
+</p>
+
+<p>
+  <strong>Homework:</strong>
+  <%= @note.comment.homework.title %>
 </p>
 
 <p>
   <strong>Archive:</strong>
-  <%= @note.archive %>
+  <%= @note.is_archive %>
 </p>
 
 <%= link_to 'Edit', edit_note_path(@note) %> |

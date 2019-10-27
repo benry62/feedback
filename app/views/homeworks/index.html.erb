@@ -22,7 +22,7 @@
         <td><%= homework.title %></td>
         <td><%= homework.is_worksheet %></td>
         <td><%= link_to 'Comments',  homework_comments_path(homework) %></td>
-        <td><%= link_to 'Show', homework %></td>
+        <td><%= link_to 'Report', homework %></td>
         <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
         <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

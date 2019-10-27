@@ -4,7 +4,9 @@ class Comment < ApplicationRecord
 
   has_many :presentations, dependent: :destroy
   has_many :presentation_items, through: :presentations
+  has_one :note, dependent: :destroy
   validates :result, numericality: { only_integer: true }
+  accepts_nested_attributes_for :note
 
 
   def addclass

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_103737) do
+ActiveRecord::Schema.define(version: 2019_10_27_124112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 2019_10_27_103737) do
 
   create_table "notes", force: :cascade do |t|
     t.text "text"
-    t.integer "student_id"
-    t.boolean "is_archive"
+    t.boolean "is_archive", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comment_id"
   end
 
   create_table "presentation_items", force: :cascade do |t|

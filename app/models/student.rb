@@ -5,8 +5,10 @@ class Student < ApplicationRecord
   validates :class_group_id, presence: true
 
   belongs_to :class_group
-  has_many :comments
-  has_many :notes
+  has_many :comments, dependent: :destroy
+  has_many :notes, dependent: :destroy
+
+
 
 
   def full_name

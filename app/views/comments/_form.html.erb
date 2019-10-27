@@ -79,12 +79,20 @@
     </div>
   </div>
   <br />
+
+  <%= form.fields_for :note do |note_form| %>
+    <%= note_form.label :text, "Notes"%>
+    <%= note_form.text_area :text, cols: 57, rows: 8 %>
+  <% end %>
+
   <div >
     <%= form.submit 'Submit', :id => 'form_submit' %> &nbsp; &nbsp;
     <%= link_to "cancel", "#", id: "cancel"%>
   </div>
-
 </div>
+
+
+
 <br />
 
 <% end %>

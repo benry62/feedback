@@ -15,8 +15,8 @@ class HomeworksController < ApplicationController
   # GET /homeworks/1
   # GET /homeworks/1.json
   def show
-    @students = @homework.class_group.students
-    @comment = Comment.new
+    @students = @homework.class_group.students.sort
+    @comments = Comment.where("homework_id=?",@homework.id).includes(:student).order("students.last_name")
   end
 
   # GET /homeworks/new

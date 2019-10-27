@@ -5,8 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Text</th>
       <th>Student</th>
+      <th>Class</th>
+      <th>Homework</th>
+      <th>Text</th>
       <th>Archive</th>
       <th colspan="3"></th>
     </tr>
@@ -15,8 +17,10 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
+        <td><%= note.comment.student.full_name %></td>
+        <td><%= note.comment.homework.class_group.name %></td>
+        <td><%= note.comment.homework.title %></td>
         <td><%= note.text %></td>
-        <td><%= note.student_id %></td>
         <td><%= note.is_archive %></td>
         <td><%= link_to 'Show', note %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>

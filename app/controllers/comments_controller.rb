@@ -33,6 +33,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @comment.build_note if @comment.note.nil?
+
   end
 
   # POST /comments
@@ -106,7 +108,9 @@ class CommentsController < ApplicationController
         :resubmit,
         :merit,
         :not_submitted,
+        note_attributes: [:text],
         presentation_item_ids: []
+
         )
     end
 

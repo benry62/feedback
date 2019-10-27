@@ -1,24 +1,91 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Class group:</strong>
-  <%= @homework.class_group.name %>
-</p>
+<div id="head" style="width:100%; float: left">
+  <h2>Report: <%= @homework.class_group.name %> <%= @homework.title %> </h2>
+  <h3><%= @homework.date.strftime("%d %b %y")%></h3>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @homework.date.strftime("%d %b %y") %>
-</p>
+<div id="wrapper" style="display: table;width:100%">
 
-<p>
-  <strong>Title:</strong>
-  <%= @homework.title %>
-</p>
+  <div id = "left" style="display: table-cell; width:20%; border:1px solid black; padding:10px">
+    <% merits = @homework.get_attribute("merit") %>
+    <h3>Merits <%= merits.count %></h3>
+    <% merits.each do |m| %>
+      <ul>
+      <li><%= m.student.full_name %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div style="display: table-cell; width:20%; border:1px solid black; padding:10px;margin:5px;">
+    <% resubmit = @homework.get_attribute("resubmit") %>
+    <h3>Resubmits <%= resubmit.count %></h3>
+    <% resubmit.each do |r| %>
+      <ul>
+      <li><%= r.student.full_name %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div style="display: table-cell; width:20%; border:1px solid black; padding:10px">
+    <% not_submitted = @homework.get_attribute("not_submitted") %>
+    <h3>Not submitted <%= not_submitted.count %></h3>
+    <% not_submitted.each do |n| %>
+      <ul>
+      <li><%= n.student.full_name %></li>
+      </ul>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Score:</strong>
-  <%= @homework.score %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_homework_path(@homework) %> |
+
+<div style="position:relative">
+
+<p>&nbsp;</p>
+<table>
+  <thead>
+    <tr>
+      <th style="width:12%">Name</th>
+      <th>Score</th>
+      <th style="width:42%">WWW</th>
+      <th style="width:40%">Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.student.full_name %></td>
+            <td class="centre ">
+              <% if comment.result == -1 %>
+                  &mdash;
+                <% else %>
+                  <%= comment.result %>
+              <% end %>
+              <% if comment.merit %>
+                <%= image_tag("flags-icon-png-10291.png", size: "12") %>
+              <% end %>
+              <% if comment.resubmit %>
+                <%= image_tag("flags-icon-png-10292.png", size: "12") %>
+              <% end %>
+              <% if comment.not_submitted %>
+                <%= image_tag("warning-16", size: "12") %>
+              <% end %>
+
+
+        <td><%= comment.area_for_development %></td>
+        <td> <% unless comment.note.nil? %>
+              <%= comment.note.text %>
+            <% end %>
+        </td>
+
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
 <%= link_to 'Back', homeworks_path %>
