@@ -4,9 +4,9 @@
 <h2> Form: <%= @homework.class_group.name %> | Date:  <%= @homework.date.strftime("%d %b %y") %> </h2>
 <p>Number students: <%= @homework.class_group.students.size  =%></p>
 <p>Maximum score: <%= @homework.score  =%></p>
-<% bad_uns = @homework.get_not_submitted %>
+<% bad_uns = @homework.get_attribute("not_submitted") %>
 <p>Not submitted: <%= bad_uns.count %></p>
-<% @homework.get_not_submitted.each do |b_u| %>
+<% bad_uns.each do |b_u| %>
   <ul>
   <li><%= b_u.student.full_name %></li>
   </ul>

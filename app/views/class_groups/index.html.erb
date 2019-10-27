@@ -5,24 +5,25 @@
 <table>
   <thead>
     <tr>
+      <th>&nbsp;</th>
       <th>Name</th>
       <th>Year</th>
       <th>Number <br />in class</th>
       <th>Academic <br />year</th>
       <th>Number <br />flagged</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @class_groups.each do |class_group| %>
-    <tr<% if class_group.is_archive %> class="not_current" <% end %>>
-        <td><%= class_group.name %></td>
+    <tr style="border-bottom: 1px solid;" <% if class_group.is_archive %> class="not_current" <% end %> > 
+        <td class="c<%= class_group.name %>">&nbsp</td>
+        <td><%= link_to class_group.name, class_group %></td>
         <td><%= class_group.year %></td>
         <td><%= class_group.count_students %></td>
         <td><%= class_group.academic_year %></td>
         <td style="color:red"><%= class_group.number_flags %></td>
-        <td><%= link_to 'Show', class_group %></td>
         <td><%= link_to 'Edit', edit_class_group_path(class_group) %></td>
         <td><%= link_to 'Destroy', class_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

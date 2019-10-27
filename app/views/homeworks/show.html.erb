@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="head" style="width:100%; float:left">
+<div class="head">
   <h2>Report: <%= @homework.class_group.name %> <%= @homework.title %> </h2>
   <h3><%= @homework.date.strftime("%d %b %y")%></h3>
 </div>
@@ -88,4 +88,5 @@
 
 
 
-<%= link_to 'Back', homeworks_path %>
+<%= link_to 'Back', homeworks_path %> |
+<%= link_to "Printable Form (PDF)", homework_path(@homework, format: 'pdf') %>

@@ -17,6 +17,19 @@ class HomeworksController < ApplicationController
   def show
     @students = @homework.class_group.students.sort
     @comments = Comment.where("homework_id=?",@homework.id).includes(:student).order("students.last_name")
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = HomeworkReportPdf.new(@homework, @comments, @students)
+        send_data pdf.render,
+          filename: @homework.class_group.name + "_Homework_Report_" + @homework.date.strftime("%d_%b_%y") + ".pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+    end
+
+
+
   end
 
   # GET /homeworks/new

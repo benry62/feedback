@@ -21,13 +21,9 @@ class Homework < ApplicationRecord
       Comment.where("homework_id = ? AND #{attribute} = ?", self.id, true).includes(:student).order("students.last_name")
   end
 
-
-  def get_not_submitted
-    Comment.where("homework_id = ? AND not_submitted = ?", self.id, true).includes(:student).order("students.last_name")
+  def pretty_boolean(bool)
+    bool ? "&#10003;" : "&#10005;"
   end
 
-  def get_resubmitted
-    Comment.where("homework_id = ? AND resubmit = ?", self.id, true).includes(:student).order("students.last_name")
-  end
 
 end
