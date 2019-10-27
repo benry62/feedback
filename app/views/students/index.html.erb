@@ -22,16 +22,16 @@
       <tr<% unless student.is_current %> class="not_current" <% end %>>
         <td class="c<%= student.class_group.name %>">&nbsp</td>
         <td><% if student.flag %>
-              <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+              <%= image_tag("flags-icon-png-10292.png", size: "16", title: 'Flagged' , alt: "flagged") %>
             <% end %>
         </td>
         <td><%= link_to student.first_name, student %></td>
         <td><%= link_to student.last_name, student %></td>
         <td><% if student.is_pp %>
-              <%= image_tag("blue_flag.png", size: "16", alt: "PP") %>
+              <%= image_tag("blue_flag.png", size: "16",  title: 'PP', alt: "PP") %>
             <% end %>
             <% if student.is_sen %>
-              <%= image_tag("orange_flag.png", size: "16", alt: "SEN") %>
+              <%= image_tag("orange_flag.png", size: "16", title: 'SEN', alt: "SEN") %>
             <% end %>
         </td>
         <td><%= student.class_group.name %></td>
