@@ -7,9 +7,6 @@ class HomeworksController < ApplicationController
   def index
   #  @homeworks = Homework.order('created_at ASC')
     @homeworks = Homework.order(:class_group_id, 'created_at ASC')
-
-
-
   end
 
   # GET /homeworks/1
