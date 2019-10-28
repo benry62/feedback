@@ -24,6 +24,23 @@ $(document).on('turbolinks:load', function() {
 
 
 
+  $("img[id^='i_']").click(function(){
+    var sid = event.target.id.split("_").pop();
+    var klass = $(this).attr("class");
+    var flag = (klass == "show") ? 0 : 1;
+    var new_class = (klass == "show") ? "hidden" : "show";
+    var flagJson = {student: {flag: flag}};
+    $.ajax({
+      type: "PUT",
+      url: "/students/" + sid +'.json',
+      dataType: "json",
+      data: flagJson,
+      success: function(){
+        $("img[id=i_" + sid + "]").removeClass(klass).addClass(new_class);
+      }
+    })
+  })
+
 
   $("a[id^='edit_']").click(function(){
     var tabId = event.target.id.split("_").pop();

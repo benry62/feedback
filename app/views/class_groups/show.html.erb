@@ -2,10 +2,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @class_group.name %>
-</p>
+
+  <h1><%= @class_group.name %></h1>
+
 
 <p>
   <strong>Academic year:</strong>
@@ -53,9 +52,12 @@
 
   <% @students.each do |student| %>
     <tr>
-      <td><% if student.flag %>
-        <%= image_tag("flags-icon-png-10292.png", size: "16", title: 'Flagged' , alt: "flagged") %>
-          <% end %>
+      <td id="f_<%= student.id %>">
+        <% if student.flag %>
+          <%= image_tag("flags-icon-png-10292.png", size: "16", title: 'Flagged' , alt: "flagged", id: 'i_' + student.id.to_s, class: "show") %>
+        <% else %>
+          <%= image_tag("flags-icon-png-10292.png", size: "16", title: 'Flagged' , alt: "flagged", id: 'i_' + student.id.to_s, class: "hidden") %>
+        <% end %>
       </td>
       <td><%= link_to student.first_name, student_url(student) %></td>
       <td><%= link_to student.last_name, student_url(student) %></td>
