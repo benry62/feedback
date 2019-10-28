@@ -12,7 +12,7 @@ class ClassGroupsController < ApplicationController
   # GET /class_groups/1.json
   def show
     @students = Student.where("class_group_id = ? AND is_current = ?", @class_group.id, true).order(:last_name)
-    @homeworks = Homework.where("class_group_id = ? AND is_archive = ?", @class_group.id, false ).order(:created_at)
+    @homeworks = Homework.where("class_group_id = ? AND is_archive = ?", @class_group.id, false ).order(:date)
   end
 
   # GET /class_groups/new
