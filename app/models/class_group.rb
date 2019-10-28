@@ -9,7 +9,7 @@ class ClassGroup < ApplicationRecord
     comments = Comment.where("homework_id = ? ", homework.id)
     scores = Hash.new
     comments.each do |comment|
-      attributes = {:result => comment.result, :is_merit => comment.merit, :resubmit => comment.resubmit, :not_submitted => comment.not_submitted}
+      attributes = {:result => comment.result, :is_merit => comment.merit, :resubmit => comment.resubmit, :not_submitted => comment.not_submitted, :id => comment.id}
       scores.store(comment.student_id, attributes)
     end
     scores

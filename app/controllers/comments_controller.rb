@@ -21,7 +21,11 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-
+    respond_to do |format|
+      format.html
+      format.json {render :show}
+      format.js {render :show}
+    end
   end
 
   # GET /comments/new

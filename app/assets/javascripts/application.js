@@ -58,7 +58,34 @@ $(document).on('turbolinks:load', function() {
     alert("click");
   });
 
+  $("span[id^='s_']").click(function(e){
+    var ids = event.target.id.split("_");
+    var cid = ids[1];
+    var hwid = ids[2];
+    var x = e.clientX;
+    var y = e.clientY;
+    var newposX = x + 60;
+    var newposY = y + 60;
+    $.ajax({
+      type: "GET",
+      url: "/homeworks/" + hwid + "/comments/" + cid ,
+      dataType: "json",
+      success: function(data){
+        $("#www").empty().html(data.www)
+        $("#afd").empty().html(data.area_for_development)
+          $( "#dialog" ).dialog("open");
+      } // end success
+    }) // end ajax
+  }) // end span
 
+
+  $("#dialog").dialog({
+      autoOpen: false,
+      modal: true,
+      title: "Comments"
+
+
+  });
 
 
 

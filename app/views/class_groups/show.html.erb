@@ -35,6 +35,15 @@
 <%= link_to 'Back', class_groups_path %>
 
 
+
+<!-- HTML -->
+<div id = "dialog"  title = "Dialog Title goes here...">
+  <p><span style="font-weight: bold;">General comments: </span><span id="www"></span></p>
+  <p><span style="font-weight: bold;">Homework comments: </span><span id="afd"></span></p>
+</div>
+
+
+
 <h3>Students</h3>
 <table>
   <thead>
@@ -72,11 +81,12 @@
         <% results = @class_group.get_scores(homework) %>
         <% if results[student.id][:result].present? %>
           <% result = results[student.id][:result] %>
-            <td class="centre <%= @class_group.set_colour(homework, result) %>">
+          <% id = results[student.id][:id] %>
+            <td class="centre <%= @class_group.set_colour(homework, result) %>" >
               <% if result == -1 %>
                   &mdash;
                 <% else %>
-                  <%= result %>
+                  <span id="s_<%= id %>_<%= homework.id %>"> <%= result %></span>
               <% end %>
               <% if results[student.id][:is_merit] %>
                 <%= image_tag("flags-icon-png-10291.png", size: "12") %>
