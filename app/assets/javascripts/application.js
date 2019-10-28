@@ -83,10 +83,27 @@ $(document).on('turbolinks:load', function() {
       autoOpen: false,
       modal: true,
       title: "Comments"
-
-
   });
 
+  $("img[id^='cn_']").click(function(){
+    var sid = event.target.id.split("_").pop();
+    $.ajax({
+      type: "GET",
+      url: "/notes/?student_id=" + sid,
+      dataType: "json",
+      success: function(data){
+        var s = '<ul>'
+        for(var i = 0; i < data.length; i++) {
+            var obj = data[i].text;
+            s = s + "<li>" + obj + "</li>"
+        }
+        s = s + "</ul>"
+        $("#text").empty().html(s)
+          $( "#dialog" ).dialog("open");
+      }
+    })
+
+  })
 
 
 });

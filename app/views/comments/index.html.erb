@@ -14,7 +14,9 @@
 
 
 <div id="task-form" style="display:none; border: 1px black solid; padding: 5px;"></div>
-
+<div id = "dialog"  title = "Dialog Title goes here...">
+  <span id="text"></span>
+</div>
 <table>
   <thead>
     <tr>
@@ -33,7 +35,7 @@
     <% @comments.each do |comment| %>
       <tr class="<%= comment.calculate_class(comment.homework.score) %>" id="n_<%= comment.id %>">
         <td><% if comment.student.flag %>
-          <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+          <%= image_tag("flags-icon-png-10292.png", size: "16", id: "cn_#{comment.student.id}") %>
             <% end %>
         </td>
         <td><%= link_to comment.student.full_name, edit_homework_comment_url(@homework, comment), :id => "edit_#{comment.id}" , remote: true%></td>

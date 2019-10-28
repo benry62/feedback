@@ -4,7 +4,16 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    if (params[:student_id])
+      student_id = (params[:student_id])
+      @notes =   Note.joins(:comment).merge(Comment.where("student_id = ?", student_id))
+    else
+      @notes = Note.all
+    end
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # GET /notes/1
@@ -40,7 +49,6 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
-    debugger
     respond_to do |format|
       if @note.update(note_params)
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
