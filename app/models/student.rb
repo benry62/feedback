@@ -6,10 +6,6 @@ class Student < ApplicationRecord
 
   belongs_to :class_group
   has_many :comments, dependent: :destroy
-  has_many :notes, dependent: :destroy
-
-
-
 
   def full_name
     "#{first_name} #{last_name}"
