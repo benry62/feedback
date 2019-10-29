@@ -23,8 +23,7 @@ $(document).on('turbolinks:load', function() {
   $( ".not_current" ).hide();
 
 
-
-  $("img[id^='i_']").click(function(){
+  $("body").on("click", "img[id^='i_']", function(){
     var sid = event.target.id.split("_").pop();
     var klass = $(this).attr("class");
     var flag = (klass == "show") ? 0 : 1;
@@ -42,7 +41,7 @@ $(document).on('turbolinks:load', function() {
   })
 
 
-  $("body").on ("click", "a[id^='edit_']", function(){
+  $("body").on("click", "a[id^='edit_']", function(){
     var tabId = event.target.id.split("_").pop();
     $("#h").remove();
     $("#holder").remove();
@@ -54,8 +53,7 @@ $(document).on('turbolinks:load', function() {
     $( ".not_current" ).toggle();
   });
 
-
-  $("span[id^='s_']").click(function(){
+  $("body").on("click", "span[id^='s_']", function(){
     var ids = event.target.id.split("_");
     var cid = ids[1];
     var hwid = ids[2];
@@ -78,7 +76,7 @@ $(document).on('turbolinks:load', function() {
       title: "Comments"
   });
 
-  $("img[id^='cx_']").click(function(){
+  $("body").on("click", "img[id^='cx_']", function(){
     var sid = event.target.id.split("_").pop();
     $.ajax({
       type: "GET",
