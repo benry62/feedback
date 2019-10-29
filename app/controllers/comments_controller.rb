@@ -64,6 +64,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
+        @comment.delete_empty_notes
         @comment.set_flag(params[:flag])
         format.html { redirect_to homework_comments_url(), notice: 'Comment was successfully updated.' }
         format.js { redirect_to homework_comments_url(), notice: 'Comment was successfully updated.' }

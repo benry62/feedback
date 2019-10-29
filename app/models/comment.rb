@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
 
   has_many :presentations, dependent: :destroy
   has_many :presentation_items, through: :presentations
-  has_one :note, dependent: :destroy
+  has_one :note, dependent: :destroy, inverse_of: :comment
   validates :result, numericality: { only_integer: true }
   accepts_nested_attributes_for :note
 
@@ -43,8 +43,10 @@ class Comment < ApplicationRecord
     end
   end
 
-  def set_not_submitted
-
+  def delete_empty_notes
+    if self.note.text.length == 0
+      self.note.destroy
+    end
 
   end
 

@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    if (params[:student_id])
+    if (params[:student_id]) # JSON call
       student_id = (params[:student_id])
       @notes =   Note.joins(:comment).merge(Comment.where("student_id = ?", student_id))
     else
@@ -33,15 +33,17 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    unless params[:text].length.nil?
+      @note = Note.new(note_params)
 
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
-        format.json { render :show, status: :created, location: @note }
-      else
-        format.html { render :new }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @note.save
+          format.html { redirect_to @note, notice: 'Note was successfully created.' }
+          format.json { render :show, status: :created, location: @note }
+        else
+          format.html { render :new }
+          format.json { render json: @note.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

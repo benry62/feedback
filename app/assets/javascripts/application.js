@@ -47,25 +47,18 @@ $(document).on('turbolinks:load', function() {
     $("#h").remove();
     $("#holder").remove();
     $("#n_" + tabId ).after( "<tr id=\"h\"><td colspan='9'><div id='holder'><td></div></tr>" );
-    })
+  })
 
 
   $( "button" ).click(function() {
     $( ".not_current" ).toggle();
   });
 
-  $( "a#cancel" ).click(function() {
-    alert("click");
-  });
 
-  $("span[id^='s_']").click(function(e){
+  $("span[id^='s_']").click(function(){
     var ids = event.target.id.split("_");
     var cid = ids[1];
     var hwid = ids[2];
-    var x = e.clientX;
-    var y = e.clientY;
-    var newposX = x + 60;
-    var newposY = y + 60;
     $.ajax({
       type: "GET",
       url: "/homeworks/" + hwid + "/comments/" + cid ,
@@ -92,18 +85,23 @@ $(document).on('turbolinks:load', function() {
       url: "/notes/?student_id=" + sid,
       dataType: "json",
       success: function(data){
-        var s = '<ul>'
+        var s = ''
         for(var i = 0; i < data.length; i++) {
             var obj = data[i].text;
-            s = s + "<li>" + obj + "</li>"
+            if (obj.length > 0) {
+              s = s + "<li>" + obj + "</li>";
+            }
         }
-        s = s + "</ul>"
+        if (s.length > 0) {
+          s = "<ul>" + s + "</ul>"
+        } else {
+          s = "No notes"
+        }
         $("#text").empty().html(s)
-          $( "#dialog" ).dialog("open");
-      }
-    })
-
-  })
+        $( "#dialog" ).dialog("open");
+      } // success
+    })// ajax
+  })// "img[id^='cn_']
 
 
 });
