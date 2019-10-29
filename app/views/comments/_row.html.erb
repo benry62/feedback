@@ -1,0 +1,24 @@
+<tr class="<%= comment.calculate_class(comment.homework.score) %>" id="n_<%= comment.id %>">
+  <td><% if comment.student.flag %>
+    <%= image_tag("flags-icon-png-10292.png", size: "16", id: "cx_#{comment.student.id}") %>
+      <% end %>
+  </td>
+  <td><%= link_to comment.student.full_name, edit_homework_comment_url(@homework, comment), :id => "edit_#{comment.id}" , remote: true%></td>
+  <td><%= comment.result %>
+    <% if comment.merit %>
+      <%= image_tag("flags-icon-png-10291.png", size: "16") %>
+    <% end %>
+    <% if comment.not_submitted %>
+      <%= image_tag("warning-16", size: "16") %>
+    <% end %>
+    <% if comment.resubmit %>
+      <%= image_tag("flags-icon-png-10292.png", size: "16") %>
+    <% end %>
+  </td>
+  <td><%= comment.www %></td>
+  <td><%= comment.area_for_development %></td>
+  <td><%= comment.dirt %></td>
+  <td><%= comment.spelling %></td>
+  <td><%= link_to 'Show', student_path(comment.student) %></td>
+  <td><%= link_to 'Destroy', homework_comment_url(@homework, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

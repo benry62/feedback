@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function() {
   })
 
 
-  $("a[id^='edit_']").click(function(){
+  $("body").on ("click", "a[id^='edit_']", function(){
     var tabId = event.target.id.split("_").pop();
     $("#h").remove();
     $("#holder").remove();
@@ -78,7 +78,7 @@ $(document).on('turbolinks:load', function() {
       title: "Comments"
   });
 
-  $("img[id^='cn_']").click(function(){
+  $("img[id^='cx_']").click(function(){
     var sid = event.target.id.split("_").pop();
     $.ajax({
       type: "GET",

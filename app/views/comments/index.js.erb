@@ -1,0 +1,5 @@
+$('tr#n_<%= @comment.id %>').replaceWith("<%= j (render 'row', comment: @comment) %>");
+$('#holder').slideUp(350);
+$("#h").remove();
+
+$('tr#n_<%= @comment.id %>').effect( "highlight", "slow")
