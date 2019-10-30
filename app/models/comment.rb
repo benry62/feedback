@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
   has_many :presentation_items, through: :presentations
   has_one :note, dependent: :destroy, inverse_of: :comment
   validates :result, numericality: { only_integer: true }
-  accepts_nested_attributes_for :note
+  accepts_nested_attributes_for :note, reject_if: proc { |attributes| attributes['text'].blank? }
 
 
   def addclass
@@ -43,10 +43,12 @@ class Comment < ApplicationRecord
     end
   end
 
-  def delete_empty_notes
-    if self.note.text.length == 0
-      self.note.destroy
-    end
+# Horrible, horrible hack that fortunately no longer needed.
+
+#  def delete_empty_notes
+#    if self.note.text.length == 0
+#      self.note.destroy
+#    end
 
   end
 
