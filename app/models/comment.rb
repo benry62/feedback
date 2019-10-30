@@ -49,8 +49,7 @@ class Comment < ApplicationRecord
 #    if self.note.text.length == 0
 #      self.note.destroy
 #    end
-
-  end
+#  end
 
 
 
