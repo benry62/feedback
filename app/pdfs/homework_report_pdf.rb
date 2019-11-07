@@ -43,6 +43,7 @@ class HomeworkReportPdf < Prawn::Document
     unless comment_data.size == 0
       list_notes(comment_data)
     end
+    list_resubmit_comments(resubmits)
   #  list_notes(note_data)
   end #initialize
 
@@ -118,8 +119,9 @@ class HomeworkReportPdf < Prawn::Document
 
 
   def list_notes(comment_data)
-    y_position = cursor
+    y_position = cursor+25
     bounding_box([0, y_position-100], :width => 1200) do
+      text "Flagged comments", size: 12, :style => :bold
       t = table(comment_data,
         :cell_style => {:size => 11},
         :row_colors => ["F0F0F0", "FFFFFF"],
@@ -129,7 +131,26 @@ class HomeworkReportPdf < Prawn::Document
   end #method
 
 
+  def list_resubmit_comments(resubmits)
+    resubmits_data = Array.new
+    resubmits.each do |resubmit|
+      text = ''
+      unless resubmit.area_for_development.nil?
+        resubmits_data << [resubmit.student.first_name + " " + resubmit.student.last_name, resubmit.area_for_development]
+      end
+    end # comments.each
 
+    y_position = cursor+50
+    bounding_box([0, y_position-100], :width => 1200) do
+      text "Resubmitted comments", size: 12, :style => :bold
+      t = table(resubmits_data,
+        :cell_style => {:size => 11},
+        :row_colors => ["F0F0F0", "FFFFFF"],
+        :column_widths => [150, 350]
+      )
+    end # do
+
+  end
 
 
 
