@@ -122,11 +122,7 @@ class HomeworkReportPdf < Prawn::Document
     y_position = cursor+25
     bounding_box([0, y_position-100], :width => 1200) do
       text "Flagged comments", size: 12, :style => :bold
-      t = table(comment_data,
-        :cell_style => {:size => 11},
-        :row_colors => ["F0F0F0", "FFFFFF"],
-        :column_widths => [150, 25]
-      )
+      build_table(comment_data, 150, 25)
     end # do
   end #method
 
@@ -143,15 +139,17 @@ class HomeworkReportPdf < Prawn::Document
     y_position = cursor+50
     bounding_box([0, y_position-100], :width => 1200) do
       text "Resubmitted comments", size: 12, :style => :bold
-      t = table(resubmits_data,
-        :cell_style => {:size => 11},
-        :row_colors => ["F0F0F0", "FFFFFF"],
-        :column_widths => [150, 350]
-      )
+      build_table(resubmits_data, 150, 350)
     end # do
-
   end
 
+  def build_table(data, col1, col2)
+    t = table(data,
+      :cell_style => {:size => 11},
+      :row_colors => ["F0F0F0", "FFFFFF"],
+      :column_widths => [col1, col2]
+    )
+  end
 
 
 
