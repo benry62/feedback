@@ -43,6 +43,7 @@ class HomeworkReportPdf < Prawn::Document
     unless comment_data.size == 0
       list_notes(comment_data)
     end
+    move_down 10
     list_resubmit_comments(resubmits)
   #  list_notes(note_data)
   end #initialize
@@ -137,10 +138,8 @@ class HomeworkReportPdf < Prawn::Document
     end # comments.each
 
     y_position = cursor+50
-    bounding_box([0, y_position-100], :width => 1200) do
-      text "Resubmitted comments", size: 12, :style => :bold
-      build_table(resubmits_data, 150, 350)
-    end # do
+    text "Resubmitted comments", size: 12, :style => :bold
+    build_table(resubmits_data, 150, 350)
   end
 
   def build_table(data, col1, col2)
