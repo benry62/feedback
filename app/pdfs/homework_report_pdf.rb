@@ -121,10 +121,8 @@ class HomeworkReportPdf < Prawn::Document
 
   def list_notes(comment_data)
     y_position = cursor+25
-    bounding_box([0, y_position-100], :width => 1200) do
-      text "Flagged comments", size: 12, :style => :bold
-      build_table(comment_data, 150, 25)
-    end # do
+    text "Flagged comments", size: 12, :style => :bold
+    build_table(comment_data, 150, 25)
   end #method
 
 
