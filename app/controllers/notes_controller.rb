@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   def index
     if (params[:student_id]) # JSON call
       student_id = (params[:student_id])
-      @notes =   Note.joins(:comment).merge(Comment.where("student_id = ?", student_id))
+      @notes =   Note.joins(:comment).merge(Comment.where("student_id = ? AND notes.is_archive = FALSE", student_id))
     else
       @notes = Note.all
     end
