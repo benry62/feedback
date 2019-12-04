@@ -122,7 +122,9 @@ class HomeworkReportPdf < Prawn::Document
   def list_notes(comment_data)
     y_position = cursor+25
     text "Flagged comments", size: 12, :style => :bold
-    build_table(comment_data, 150, 25)
+    unless comment_data.empty?
+      build_table(comment_data, 150, 25)
+    end
   end #method
 
 
@@ -137,7 +139,9 @@ class HomeworkReportPdf < Prawn::Document
 
     y_position = cursor+50
     text "Resubmitted comments", size: 12, :style => :bold
-    build_table(resubmits_data, 150, 350)
+    unless resubmits_data.empty?
+      build_table(resubmits_data, 150, 350)
+    end
   end
 
   def build_table(data, col1, col2)
