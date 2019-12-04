@@ -53,7 +53,7 @@
       <th>Last name</th>
       <th>&nbsp;</th>
       <% @homeworks.each do |homework| %>
-        <th><p><%= link_to homework.title[0..3], homework_comments_path(homework)%><br /><%= homework.score %></th>
+        <th><p><%= link_to homework.title[0..4], homework_comments_path(homework)%><br /><%= homework.score %></th>
         <% end %>
     </tr>
   </thead>
