@@ -79,7 +79,10 @@
       </td>
       <% @homeworks.each do |homework| %>
         <% results = @class_group.get_scores(homework) %>
-        <% if results[student.id][:result].present? %>
+
+        <% # if results[student.id][:result].present? %>
+        <% if results[student.id].present? %>
+
           <% result = results[student.id][:result] %>
           <% id = results[student.id][:id] %>
             <td class="centre <%= @class_group.set_colour(homework, result) %>" >
